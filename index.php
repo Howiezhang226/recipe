@@ -1,3 +1,6 @@
+<?php
+include_once "resource/session.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,9 +12,12 @@
 </head>
 <body>
 <h2>Recipe Meeting </h2><hr>
+<?php
+if (!isset($_SESSION['uname'])):  ?>
+<P>You are currently not signin <a href="signin.php">Signin</a> Not yet a member? <a href="signup.php">Signup</a> </P>
+<?php else: ?>
+<p>You are logged in as <?php echo $_SESSION['uname']?> <a href="logout.php">Logout</a> </p>
+<?php endif; ?>
 
-<P>You are currently not signin <a href="login.php">Login</a> Not yet a member? <a href="signup.php">Signup</a> </P>
-
-<p>You are logged in as {username} <a href="logout.php">Logout</a> </p>
 </body>
 </html>
