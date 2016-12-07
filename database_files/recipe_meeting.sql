@@ -1,0 +1,9 @@
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('PSCC meeting1', '2016-12-12 17:00:00', 1, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('PSCC meeting2', '2016-12-19 17:00:00', 1, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('PSCC meeting3', '2016-12-26 17:00:00', 1, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('PSCC meeting4', '2017-01-01 17:00:00', 1, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('PSCC meeting5', '2016-01-08 17:00:00', 1, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('PSCC meeting6', '2016-01-17 17:00:00', 1, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('Cf meeting1', '2016-01-17 17:00:00', 2, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('Cf meeting2', '2016-02-17 17:00:00', 2, '25 RIVER DE S');
+INSERT INTO recipe.meeting (mname, mtime, mholder, mlocation) VALUES ('Cf meeting3', '2016-03-17 17:00:00', 2, '25 RIVER DE S');

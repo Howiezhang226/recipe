@@ -1,0 +1,10 @@
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('david', 21, 'best', '', 4);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('david', 22, 'best', '', 3);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('david', 23, 'best', '', 2);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('david', 24, 'best', '', 1);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('hengwu', 20, 'Yummy!', 'Really, really, tasty!', 5);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('hengwu', 21, 'best', '', 5);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('hengwu', 22, 'best', '', 4);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('hengwu', 23, 'best', '', 3);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('hengwu', 24, 'best', '', 1);
+INSERT INTO recipe.review (uname, rid, content, suggestion, rating) VALUES ('hengwu', 25, 'best', '', 1);
