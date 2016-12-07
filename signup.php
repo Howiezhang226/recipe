@@ -1,6 +1,5 @@
 <?php
 include_once 'resource/Database.php';
-var_dump($_POST);
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $loginname = $_POST['loginname'];
@@ -22,10 +21,9 @@ if (isset($_POST['username'])) {
                 ':upassword' => $hash_password,
                 ':uage' => $age
             ));
-        echo $statement -> rowCount();
-//        if ($statement -> rowCount() == 1) {
-//            $result =  "<p> registeration successful! <p>";
-//        }
+        if ($statement -> rowCount() == 1) {
+            $result =  "<p> registeration successful! <p>";
+       }
     } catch (PDOException $pdoex) {
         echo $pdoex -> getMessage();
         $result = "<p> An error! <p>";
