@@ -18,6 +18,8 @@
 --
 -- Table structure for table `Recipe`
 --
+-- please use this command line to dump data
+-- mysqldump -u root -p recipe > database_dump.txt
 
 DROP TABLE IF EXISTS `Recipe`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
