@@ -1,0 +1,62 @@
+<html>
+	<body>
+		<style>
+
+		</style>
+
+		<div class="recipe">
+			<p class="recipe-title"></p>
+			<p class="recipe-description"></p>
+			<p class="recipe-serving-number"></p>
+
+			<a href="main-page.html">back</a>
+
+			<ul class="ingredients"></ul>
+
+			<ul class="tags"></ul>
+			<hr>
+			
+			<ul class="reviews"></ul>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script>
+			$.ajax({
+				type: "GET",
+				url: "recipe.php",
+				success: function(data) {
+					$data = $.parseJSON(data);
+					$(".recipe-title").text($data["recipe"][0]["title"]);
+					$(".recipe-description").text($data["recipe"][0]["description"]);
+					$(".recipe-serving-number").text($data["recipe"][0]["number_of_serving"]);
+					
+					for (var i = 0; i < $data["ingredients"].length; i++) {
+						$ing = $data["ingredients"][i];
+						var list = document.createElement("li");
+						$(list).text($ing["quantities"] + " " + $ing["unit"] + " of " + $ing["iname"]);
+						$(".ingredients").append($(list));
+					}
+
+					for (var i = 0; i < $data["tags"].length; i++) {
+						var list = document.createElement("li");
+						$(list).text($data["tags"][i]["tname"]);
+						$(".tags").append($(list));
+					}
+
+					for (var i = 0; i < $data["reviews"].length; i++) {
+						$review = $data["reviews"][i];
+						var list = document.createElement("li");
+						var review = document.createElement("div");
+						$(review).append('<p>' + $review["uname"] + '</p>');
+						$(review).append('<p>' + $review["content"] + '</p>');
+						$(review).append('<p>' + $review["suggestion"] + '</p>');
+						$(review).append('<p>' + "rating: " + $review["rating"] + '</p>');
+						$(list).append($(review));
+						$(".reviews").append($(list));
+					}
+					console.log(data);
+				}
+			});
+		</script>
+	</body>
+</html>

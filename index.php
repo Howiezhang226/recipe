@@ -12,12 +12,13 @@ include_once "resource/session.php";
 </head>
 <body>
 <h2>Recipe Meeting </h2><hr>
-<?php
-if (!isset($_SESSION['uname'])):  ?>
-<P>You are currently not signin <a href="signin.php">Signin</a> Not yet a member? <a href="signup.php">Signup</a> </P>
-<?php else: ?>
-<p>You are logged in as <?php echo $_SESSION['uname']?> <a href="logout.php">Logout</a> </p>
-<?php endif; ?>
+	<?php
+		if (!isset($_SESSION['uname'])):  ?>
+			<P>You are currently not signin <a href="signin.php">Signin</a> Not yet a member? <a href="signup.php">Signup</a> </P>
+		<?php else: ?>
+			<p>You are logged in as <?php echo $_SESSION['uname']?> <a href="logout.php">Logout</a> </p>
+			<p>Or continue log in as <?php echo $_SESSION['uname']?> <a href="main-page.html">Go</a></p>
+	<?php endif; ?>
 
 </body>
 </html>
