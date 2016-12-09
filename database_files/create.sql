@@ -15,9 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- please use command 
--- mysqldump -u root -p recipe > database_dump.txt
-
 --
 -- Table structure for table `Recipe`
 --
@@ -325,14 +322,14 @@ DROP TABLE IF EXISTS `report`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `report` (
-  `reid` int(10) NOT NULL,
-  `mid` int(10) DEFAULT NULL,
-  `uname` varchar(20) DEFAULT NULL,
-  `Description` text,
-  PRIMARY KEY (`reid`),
-  KEY `mid` (`mid`),
-  CONSTRAINT `report_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `meeting` (`mid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `mid` int(10) NOT NULL,
+  `uname` varchar(20) NOT NULL,
+  `description` text,
+  PRIMARY KEY (`mid`,`uname`),
+  KEY `uname` (`uname`),
+  CONSTRAINT `report_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `meeting` (`mid`),
+  CONSTRAINT `report_ibfk_2` FOREIGN KEY (`uname`) REFERENCES `User` (`uname`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,14 +349,17 @@ DROP TABLE IF EXISTS `report_photo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `report_photo` (
-  `reportphotoid` int(10) NOT NULL AUTO_INCREMENT,
+  `reportwphotoid` int(10) NOT NULL AUTO_INCREMENT,
   `reportphotoname` varchar(20) DEFAULT NULL,
   `reportphotobody` varchar(20) DEFAULT NULL,
-  `Reid` int(10) DEFAULT NULL,
-  PRIMARY KEY (`reportphotoid`),
-  KEY `Reid` (`Reid`),
-  CONSTRAINT `report_photo_ibfk_1` FOREIGN KEY (`Reid`) REFERENCES `report` (`reid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `mid` int(10) DEFAULT NULL,
+  `uname` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`reportwphotoid`),
+  KEY `mid` (`mid`),
+  KEY `uname` (`uname`),
+  CONSTRAINT `report_photo_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `report` (`mid`),
+  CONSTRAINT `report_photo_ibfk_2` FOREIGN KEY (`uname`) REFERENCES `report` (`uname`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -493,4 +493,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-09 15:55:40
+-- Dump completed on 2016-12-09 16:31:13
