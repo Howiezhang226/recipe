@@ -1,5 +1,7 @@
 <?php
+$page_title = "Sign Up";
 include_once 'resource/Database.php';
+include_once "partials/headers.php";
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $loginname = $_POST['loginname'];
@@ -32,38 +34,63 @@ if (isset($_POST['username'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Register Page</title>
-</head>
-<body>
-<h2>Recipe Meeting </h2><hr>
 
-<h3>Registration Form</h3>
+<div class="container">
+    <section class="col col-lg-7 ">
+        <h3>Registration Form</h3><hr>
+        <?php
+        if (isset($result)) {
+            echo $result;
+        }
+
+        ?>
+        <?php
+        if(!empty($form_error)) echo show_errors($form_error);
+        ?>
+
+
+        <form method="post" action="">
+            <div  class="form-group">
+                <label for="UsernameField">Username</label>
+                <input class="form-control" type="text" value="" name="username" id="UsernameField">
+            </div>
+            <div  class="form-group">
+                <label for="loginnameField">Loginname</label>
+                <input class="form-control" type="text" value="" name="loginname" id="loginnameField">
+            </div>
+            <div class="form-group">
+                <label for="PasswordField">Password</label>
+                <input class="form-control" type="password" value="" name="password" id="PasswordField">
+            </div>
+            <div  class="form-group">
+                <label for="AgeField">Age</label>
+                <input class="form-control" type="number" value="" name="age" id="AgeField">
+            </div>
+            <label for="GenderField">Gender</label>
+            <div class="radio-inline">
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="m" id="GenderField">
+                    Male
+                </label>
+            </div>
+            <div class="radio-inline">
+                <label>
+                    <input type="radio" name="gender" value="f" id="GenderField">
+                    Female
+                </label>
+            </div>
+            <div></div>
+
+            <button type="submit"  class="btn btn-primary pull-right">Sign Up</button>
+        </form>
+        <p><a href="index.php">Back</a> </p>
+    </section>
+
+
+
+</div><!-- /.container -->
+
+
 <?php
-if (isset($result)) {
-    echo $result;
-}
-
+include_once "partials/footers.php"
 ?>
-<form method="post" action="">
-    <table>
-        <tr><td>Username:</td> <td><input type="text" value="" name="username"></td></tr>
-        <tr><td>loginname:</td> <td><input type="text" value="" name="loginname"></td></tr>
-        <tr><td>Password:</td> <td><input type="password" value="" name="password"></td></tr>
-        <tr><td>Age:</td> <td><input type="number" value="" name="age"></td></tr>
-        <tr>
-            <td>Gender:</td>
-        <td>
-            <input type="radio" name="gender" value="m"> Male
-            <input type="radio" name="gender" value="f"> Female
-        </td>
-        </tr>
-        <tr><td></td><td><input style="float: right;" type="submit" value="Signup"></td></tr>
-    </table>
-</form>
-<p><a href="index.php">Back</a> </p>
-</body>
-</html>

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.16, for osx10.11 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.11, for osx10.11 (x86_64)
 --
 -- Host: localhost    Database: recipe
 -- ------------------------------------------------------
--- Server version	5.7.16
+-- Server version	5.7.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,8 +18,6 @@
 --
 -- Table structure for table `Recipe`
 --
--- please use this command line to dump data
--- mysqldump -u root -p recipe > database_dump.txt
 
 DROP TABLE IF EXISTS `Recipe`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -69,7 +67,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES ('12','f','123','$2y$10$coXHpnWiqLq3DsalBB4VuOiNEzAlt8B50QXOlsLpKLNN/JLjDjti6',12),('aaa','f','bdsdds','$2y$10$oMhMNJNJOCGOl/FWtbck.uQj.6yBr/fCOSL2CTY.3JAkYDAam0ocW',12),('asd','f','asdas',NULL,12),('david','M','david','whwhwh',22),('haozhang','M','haozhang','whwhwh',22),('hengwu','M','hengwu','whwhwh',22),('hhhhh','M','hhhhh','whwhwh',22),('idonot','M','idonot','whwhwh',22),('kiser','M','kiser','whwhwh',22),('lalalsdasdas','M','lalalsdasdas','whwhwh',22),('qwe','f','qw12','12',12),('rerkemndssad','M','rerkemndssad','whwhwh',22),('siver','M','siver','whwhwh',22);
+INSERT INTO `User` VALUES ('12','f','123','$2y$10$coXHpnWiqLq3DsalBB4VuOiNEzAlt8B50QXOlsLpKLNN/JLjDjti6',12),('aaa','f','bdsdds','$2y$10$oMhMNJNJOCGOl/FWtbck.uQj.6yBr/fCOSL2CTY.3JAkYDAam0ocW',12),('asd','f','asdas',NULL,12),('david','M','david','whwhwh',22),('haozhang','M','haozhang','whwhwh',22),('heng','m','hengheng','$2y$10$FION50MKKgK1//d/2DFHxuUF4ygKYbCiDaWNhcR4M/Yu7uijp1Nue',12),('hengwu','M','hengwu','whwhwh',22),('hhhhh','M','hhhhh','whwhwh',22),('idonot','M','idonot','whwhwh',22),('kiser','M','kiser','whwhwh',22),('lalalsdasdas','M','lalalsdasdas','whwhwh',22),('qwe','f','qw12','12',12),('rerkemndssad','M','rerkemndssad','whwhwh',22),('sh','f','sh','$2y$10$0/F9.d8MFVIfCcoCnKO1eO5LfXG4vQjYCLEgnSyehXf75lyiUygGW',12),('siver','M','siver','whwhwh',22),('ssssssa','m','xczzxc','$2y$10$wZ7S230cxongbXAba/e5KO4B6GtgJR56byYWC8GOQp8ESiajnnXsW',23),('xxx','m','xxxx','$2y$10$px6RVMc1/dEdbz06LWipzuYWCWWDPgipmpoWxkVfz7pGB7AjM5Rem',12);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +171,7 @@ CREATE TABLE `join_groups` (
 
 LOCK TABLES `join_groups` WRITE;
 /*!40000 ALTER TABLE `join_groups` DISABLE KEYS */;
-INSERT INTO `join_groups` VALUES (1,'david','2016-11-24 17:42:21'),(1,'haozhang','2016-11-24 17:42:23'),(1,'hengwu','2016-11-24 17:42:24'),(2,'hengwu','2016-11-24 17:42:26');
+INSERT INTO `join_groups` VALUES (1,'david','2016-11-24 17:42:21'),(1,'haozhang','2016-11-24 17:42:23'),(1,'heng','2016-11-24 17:42:21'),(1,'hengwu','2016-11-24 17:42:24'),(2,'hengwu','2016-11-24 17:42:26');
 /*!40000 ALTER TABLE `join_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +256,7 @@ CREATE TABLE `recipe_item` (
 
 LOCK TABLES `recipe_item` WRITE;
 /*!40000 ALTER TABLE `recipe_item` DISABLE KEYS */;
-INSERT INTO `recipe_item` VALUES (1,19,'g',120.0000),(2,1,'g',12.0000),(3,2,'teaspoon',1.0000);
+INSERT INTO `recipe_item` VALUES (1,19,'g',120.0000),(1,21,'g',12.0000),(2,1,'g',12.0000),(2,21,'kg',12.0000),(3,2,'teaspoon',1.0000);
 /*!40000 ALTER TABLE `recipe_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -285,7 +283,7 @@ CREATE TABLE `recipe_tag` (
 
 LOCK TABLES `recipe_tag` WRITE;
 /*!40000 ALTER TABLE `recipe_tag` DISABLE KEYS */;
-INSERT INTO `recipe_tag` VALUES (1,1),(2,1),(1,2),(2,2),(1,3),(2,3),(1,4),(2,4),(1,5),(2,5),(1,6),(2,6),(5,8),(5,9),(11,19);
+INSERT INTO `recipe_tag` VALUES (1,1),(2,1),(1,2),(2,2),(1,3),(2,3),(1,4),(2,4),(1,5),(2,5),(1,6),(2,6),(5,8),(5,9),(11,19),(1,21),(3,21),(5,21),(11,21);
 /*!40000 ALTER TABLE `recipe_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -326,10 +324,7 @@ DROP TABLE IF EXISTS `report`;
 CREATE TABLE `report` (
   `mid` int(10) NOT NULL,
   `uname` varchar(20) NOT NULL,
-<<<<<<< HEAD
   `description` text,
-=======
->>>>>>> ed338aa4ead493e2ad422c11e17929b653cdc325
   PRIMARY KEY (`mid`,`uname`),
   KEY `uname` (`uname`),
   CONSTRAINT `report_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `meeting` (`mid`),
@@ -424,7 +419,7 @@ CREATE TABLE `review_photo` (
   KEY `uname` (`uname`),
   CONSTRAINT `review_photo_ibfk_1` FOREIGN KEY (`rid`) REFERENCES `review` (`rid`),
   CONSTRAINT `review_photo_ibfk_2` FOREIGN KEY (`uname`) REFERENCES `review` (`uname`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -433,6 +428,7 @@ CREATE TABLE `review_photo` (
 
 LOCK TABLES `review_photo` WRITE;
 /*!40000 ALTER TABLE `review_photo` DISABLE KEYS */;
+INSERT INTO `review_photo` VALUES (1,'testphoto','axassxa',21,'david');
 /*!40000 ALTER TABLE `review_photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -497,8 +493,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-<<<<<<< HEAD
--- Dump completed on 2016-12-09 16:31:13
-=======
--- Dump completed on 2016-12-07 13:51:13
->>>>>>> ed338aa4ead493e2ad422c11e17929b653cdc325
+-- Dump completed on 2016-12-09 16:35:51
