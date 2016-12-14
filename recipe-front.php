@@ -1,3 +1,8 @@
+<?php
+include_once "resource/session.php";
+$page_title = "recipe page";
+include_once "partials/headers.php";
+?>
 <html>
 	<body>
 		<style>
@@ -9,7 +14,7 @@
 			<p class="recipe-description"></p>
 			<p class="recipe-serving-number"></p>
 
-			<a href="main-page.html">back</a>
+			<a href="main-page-front.php">back</a>
 
 			<ul class="ingredients"></ul>
 
@@ -41,7 +46,7 @@
 						var list = document.createElement("li");
 						var link = document.createElement("a");
 
-						$(link).attr('href', "search.html");
+						$(link).attr('href', "search-front.php");
 						$(link).text($data["tags"][i]["tname"]);
 						$(list).attr('id', $data["tags"][i]["tid"]);
 						$(list).append($(link));
@@ -78,3 +83,6 @@
 		</script>
 	</body>
 </html>
+<?php
+include_once "partials/footers.php"
+?>

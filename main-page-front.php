@@ -1,3 +1,8 @@
+<?php
+include_once "resource/session.php";
+$page_title = "main page";
+include_once "partials/headers.php";
+?>
 <html>
 	<body>
 		<style>
@@ -74,7 +79,7 @@
 						var list = document.createElement("li");
 						var link = document.createElement("a");
 
-						$(link).attr('href', "recipe.html");
+						$(link).attr('href', "recipe-front.php");
 						$(link).text($data["recipes"][i]["title"]);
 
 						$(list).append($(link));
@@ -118,3 +123,6 @@
 		</script>
 	</body>
 </html>
+<?php
+include_once "partials/footers.php"
+?>
