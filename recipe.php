@@ -13,7 +13,7 @@
 	        $statement = execute($queryIngredients, $db);
 	        $queryResult['ingredients'] = $statement->fetchAll();
 
-	        $queryTags = "SELECT tname from recipe.recipe natural join recipe.recipe_tag natural join recipe.tags where rid = :rid";
+	        $queryTags = "SELECT tid, tname from recipe.recipe natural join recipe.recipe_tag natural join recipe.tags where rid = :rid";
 	        $statement = execute($queryTags, $db);
 	        $queryResult['tags'] = $statement->fetchAll();
 
@@ -36,3 +36,5 @@
             ));
         return $statement;
 	}
+
+?>

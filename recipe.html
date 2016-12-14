@@ -39,8 +39,26 @@
 
 					for (var i = 0; i < $data["tags"].length; i++) {
 						var list = document.createElement("li");
-						$(list).text($data["tags"][i]["tname"]);
+						var link = document.createElement("a");
+
+						$(link).attr('href', "search.html");
+						$(link).text($data["tags"][i]["tname"]);
+						$(list).attr('id', $data["tags"][i]["tid"]);
+						$(list).append($(link));
 						$(".tags").append($(list));
+
+						$(list).click(function() {
+							$.ajax({
+								type: "POST",
+								url: "resource/set-session.php",
+								data: {'search_tag': $(this).attr('id')},
+								success: function(data) {
+									// console.log(data);
+								},
+								dataType: "json"
+							});
+						});
+
 					}
 
 					for (var i = 0; i < $data["reviews"].length; i++) {
