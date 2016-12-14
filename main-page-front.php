@@ -74,16 +74,16 @@ include_once "partials/headers.php";
 					$recipeList = $(".recipes");
 					$meetingsList = $(".meetings");
 					$groups = $(".verti-bar");
-					$data = $.parseJSON(data);
-					for (var i = 0; i < $data["recipes"].length; i++) {
+					// $data = $.parseJSON(data);
+					for (var i = 0; i < data["recipes"].length; i++) {
 						var list = document.createElement("li");
 						var link = document.createElement("a");
 
 						$(link).attr('href', "recipe-front.php");
-						$(link).text($data["recipes"][i]["title"]);
+						$(link).text(data["recipes"][i]["title"]);
 
 						$(list).append($(link));
-						$(list).attr('id', $data["recipes"][i]["rid"]);
+						$(list).attr('id', data["recipes"][i]["rid"]);
 
 						$recipeList.append($(list));
 
@@ -93,32 +93,33 @@ include_once "partials/headers.php";
 								url: "resource/set-session.php",
 								data: {'rid': $(this).attr('id')},
 								success: function(data) {
-									console.log($data);
+									console.log(data);
 								},
 								dataType: "json"
 							});
 						});
 					}
-					for (var i = 0; i < $data["meetings"].length; i++) {
+					for (var i = 0; i < data["meetings"].length; i++) {
 						var list = document.createElement("li");
-						$(list).text($data["meetings"][i]["uname"] + " rsvp to " + $data["meetings"][i]["mname"]);
-						$(list).attr('id', $data["meetings"][i]["mid"]);
+						$(list).text(data["meetings"][i]["uname"] + " rsvp to " + data["meetings"][i]["mname"]);
+						$(list).attr('id', data["meetings"][i]["mid"]);
 						$meetingsList.append($(list));
 
 						$(list).click(function() {
 							console.log(this);
 						});
 					}
-					for (var i = 0; i < $data["groups"].length; i++) {
+					for (var i = 0; i < data["groups"].length; i++) {
 						var list = document.createElement("li");
-						$(list).text($data["groups"][i]["gname"]);
-						$(list).attr('id', $data["groups"][i]["gid"]);
+						$(list).text(data["groups"][i]["gname"]);
+						$(list).attr('id', data["groups"][i]["gid"]);
 						$groups.append($(list));
 						$(list).click(function() {
 							console.log(this);
 						});
 					}
-				}
+				},
+				dataType: "json"
 			});
 		</script>
 	</body>
