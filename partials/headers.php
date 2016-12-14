@@ -34,8 +34,9 @@ ob_start();
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li ><a href="index.php">Home</a></li>
                 <?php if(isset($_SESSION['uname'])): ?>
+                    <li ><a href="main-page-front.php">Home</a></li>
+                    <li ><a href="search-front.php">Search</a></li>
                     <li><a href="">My Profile</a></li>
                     <li><a href="logout.php">Log out</a></li>
                 <?php else: ?>
