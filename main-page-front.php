@@ -40,7 +40,7 @@ include_once "partials/headers.php";
 			#main-body {
 				position: absolute;
 				margin-top: 2%;
-				margin-left: 10%;
+				/*margin-left: 10%;*/
 			}
 		</style>
 
@@ -52,17 +52,18 @@ include_once "partials/headers.php";
 			<ul class="verti-bar">
 				<li>Groups</li>
 			</ul>
-
-			<div id="main-body">
-				<ul class="recipes">
-					
-				</ul> 
-				<ul class="meetings">
-					
-				</ul>
-				<ul class="Group act">
-					
-				</ul>
+			<div class="container">
+				<div id="main-body" class="card-columns">
+					<div class="recipes">
+						
+					</div>
+					<ul class="meetings">
+						
+					</ul>
+					<ul class="Group act">
+						
+					</ul>
+				</div>
 			</div>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -74,20 +75,42 @@ include_once "partials/headers.php";
 					$recipeList = $(".recipes");
 					$meetingsList = $(".meetings");
 					$groups = $(".verti-bar");
-					// $data = $.parseJSON(data);
 					for (var i = 0; i < data["recipes"].length; i++) {
-						var list = document.createElement("li");
+						var card = document.createElement("div");
+						var card_header = document.createElement("div");
+						var card_block = document.createElement("div");
+						var title = document.createElement("h4");
+						var content = document.createElement("p");
 						var link = document.createElement("a");
+						$(card).addClass("card");
+						$(card_header).addClass("card-header");
+						$(card_block).addClass("card-block");
+						$(title).addClass("card-title");
+						$(content).addClass("card-text");
+						$(link).addClass("btn btn-primary");
 
+
+						$(content).css('line-height', '20px');
+						$(content).css('max-height', '40px');
+						$(content).css('text-overflow', 'ellipsis');
+						$(content).css('overflow', 'hidden');
+						
+						$(card_header).text("Recipe");
+						$(title).text(data["recipes"][i]["title"]);
+						$(content).text(data["recipes"][i]["description"]);
 						$(link).attr('href', "recipe-front.php");
-						$(link).text(data["recipes"][i]["title"]);
+						$(link).text("check");
 
-						$(list).append($(link));
-						$(list).attr('id', data["recipes"][i]["rid"]);
+						$(link).attr('id', data["recipes"][i]["rid"]);
 
-						$recipeList.append($(list));
+						$(card_block).append($(title));
+						$(card_block).append($(content));
+						$(card_block).append($(link));
+						$(card).append($(card_header));
+						$(card).append($(card_block));
+						$recipeList.append($(card));
 
-						$(list).click(function() {
+						$(link).click(function() {
 							$.ajax({
 								type: "POST",
 								url: "resource/set-session.php",
@@ -100,12 +123,49 @@ include_once "partials/headers.php";
 						});
 					}
 					for (var i = 0; i < data["meetings"].length; i++) {
-						var list = document.createElement("li");
-						$(list).text(data["meetings"][i]["uname"] + " rsvp to " + data["meetings"][i]["mname"]);
-						$(list).attr('id', data["meetings"][i]["mid"]);
-						$meetingsList.append($(list));
 
-						$(list).click(function() {
+						var card = document.createElement("div");
+						var card_header = document.createElement("div");
+						var card_block = document.createElement("div");
+						var title = document.createElement("h4");
+						var content = document.createElement("p");
+						var link = document.createElement("a");
+						$(card).addClass("card");
+						$(card_header).addClass("card-header");
+						$(card_block).addClass("card-block");
+						$(title).addClass("card-title");
+						$(content).addClass("card-text");
+						$(link).addClass("btn btn-primary");
+
+
+						$(content).css('line-height', '20px');
+						$(content).css('max-height', '40px');
+						$(content).css('text-overflow', 'ellipsis');
+						$(content).css('overflow', 'hidden');
+						
+						$(card_header).text("Meeting");
+						$(title).text(data["meetings"][i]["mname"]);
+						$(content).text(data["meetings"][i]["uname"] + " rsvp to " + data["meetings"][i]["mname"]);
+						$(link).attr('href', "#");
+						$(link).text("check");
+
+						$(link).attr('id', data["meetings"][i]["mid"]);
+
+						$(card_block).append($(title));
+						$(card_block).append($(content));
+						$(card_block).append($(link));
+						$(card).append($(card_header));
+						$(card).append($(card_block));
+						$meetingsList.append($(card));
+
+
+
+						// var list = document.createElement("li");
+						// $(list).text(data["meetings"][i]["uname"] + " rsvp to " + data["meetings"][i]["mname"]);
+						// $(list).attr('id', data["meetings"][i]["mid"]);
+						// $meetingsList.append($(list));
+
+						$(link).click(function() {
 							console.log(this);
 						});
 					}

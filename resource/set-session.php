@@ -6,6 +6,10 @@
 		echo json_encode($_SESSION['rid']);
 	}
 
+	if (isset($_POST['search_info_key'])) {
+		$_SESSION['search_info_key'] = $_POST['search_info_key'];
+	}
+
 	if (isset($_POST['search_tag'])) {
 		$_SESSION['search_tag'] = $_POST['search_tag'];
 	}

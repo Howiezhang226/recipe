@@ -40,7 +40,7 @@ include_once "partials/headers.php";
 
 
         <form method="post" action="">
-            <div  class="form-group">
+            <div class="form-group">
                 <label for="UsernameField">Username</label>
                 <input id="UsernameField" class="form-control" type="text" value="" name="username">
             </div>

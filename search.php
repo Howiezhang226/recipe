@@ -8,32 +8,18 @@
 	$queryReport = "SELECT * from recipe.report where description like :search";
 	$queryTags = "SELECT * from recipe.recipe_tag natural join recipe.recipe natural join recipe.tags where tname like :search";
 	$searchTags = "SELECT * from recipe.recipe_tag natural join recipe.recipe where tid = :tag";
-
 	if (isset($_POST['search_info'])) {
-		try {
-			$querySearch = [];
-			$statement = execute($queryRecipe, $db);
-			$querySearch['recipes'] = $statement->fetchAll();
+		$keyword = '%'.$_POST['search_info'].'%';
+		$querySearch = search($keyword, $db, $queryRecipe, $queryReview, $queryMeeting, $queryReport, $queryTags);
+		// echo $querySearch['report'];
+		echo json_encode($querySearch);
+	}
 
-			$statement = execute($queryTags, $db);
-			$querySearch['recipes_tags'] = $statement->fetchAll();
-
-			$statement = execute($queryReview, $db);
-			$querySearch['reviews'] = $statement->fetchAll();
-
-			$statement = execute($queryMeeting, $db);
-			$querySearch['meeting'] = $statement->fetchAll();
-
-			$statement = execute($queryReport, $db);
-			$querySearch['report'] = $statement->fetchAll();
-			unset($_SESSION['search_info']);
-			echo json_encode($querySearch);
-
-		} catch (PDOException $pdoex) {
-	        echo $pdoex -> getMessage();
-	        $result = "<p> An error! <p>";
-	    }
-
+	if (isset($_SESSION['search_info_key'])) {
+		$keyword = '%'.$_SESSION['search_info_key'].'%';	
+		$querySearch = search($keyword, $db, $queryRecipe, $queryReview, $queryMeeting, $queryReport, $queryTags);
+		unset($_SESSION['search_info_key']);
+		echo json_encode($querySearch);	
 	}
 
 	if (isset($_SESSION['search_tag'])) {
@@ -45,13 +31,38 @@
             array(
             	':tag' => $id
 		));
-		$querySearch['recipes'] = $statement->fetchAll();
+		$querySearch['recipes_tag'] = $statement->fetchAll();
 		echo json_encode($querySearch);
 	}
 
+	function search($keyword, $db, $queryRecipe, $queryReview, $queryMeeting, $queryReport, $queryTags) {
+		try {
+			$querySearch = [];
+			$statement = execute($queryRecipe, $db, $keyword);
+			$querySearch['recipes'] = $statement->fetchAll();
 
-	function execute($query, $db) {
-		$keyword = '%'.$_POST['search_info'].'%';
+			$statement = execute($queryTags, $db, $keyword);
+			$querySearch['recipes_tags'] = $statement->fetchAll();
+
+			$statement = execute($queryReview, $db, $keyword);
+			$querySearch['reviews'] = $statement->fetchAll();
+
+			$statement = execute($queryMeeting, $db, $keyword);
+			$querySearch['meeting'] = $statement->fetchAll();
+
+			$statement = execute($queryReport, $db, $keyword);
+			$querySearch['report'] = $statement->fetchAll();
+			return $querySearch;
+
+		} catch (PDOException $pdoex) {
+	        echo $pdoex -> getMessage();
+	        $result = "<p> An error! <p>";
+	    }
+	}
+
+
+	function execute($query, $db, $keyword) {
+		// $keyword = '%'.$_POST['search_info'].'%';
 		$statement = $db -> prepare($query);
         $statement -> execute(
             array(
