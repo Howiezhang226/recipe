@@ -1,6 +1,13 @@
 <?php
 	include_once "session.php";
 
+    $postdata = file_get_contents("php://input");
+    $request = json_decode($postdata);
+    $gid = $request->gid;
+    if ($gid != null) {
+        $_SESSION['gid'] = $gid;
+        echo "seccu!";
+    }
 	if (isset($_POST['rid'])) {
 		$_SESSION['rid'] = $_POST['rid'];
 		echo json_encode($_SESSION['rid']);

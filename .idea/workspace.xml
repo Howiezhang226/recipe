@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fe3c4b7-5eef-4794-aadd-f880c64751b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_files/create.sql" afterPath="$PROJECT_DIR$/database_files/create.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logout.php" afterPath="$PROJECT_DIR$/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recipe.php" afterPath="$PROJECT_DIR$/recipe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/Database.php" afterPath="$PROJECT_DIR$/resource/Database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signin.php" afterPath="$PROJECT_DIR$/signin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signup.php" afterPath="$PROJECT_DIR$/signup.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resource/Database.php" afterPath="$PROJECT_DIR$/resource/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/dd86fd51-c112-4383-9998-8abf7c1fb55e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/dd86fd51-c112-4383-9998-8abf7c1fb55e.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/set-session.php" afterPath="$PROJECT_DIR$/resource/set-session.php" />
     </list>
     <ignored path="recipe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,25 +48,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="recipe" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="User" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - @localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="recipe" />
+        <option name="myItemId" value="join_groups" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -79,35 +59,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="signin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/signin.php">
+      <file leaf-file-name="groups.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/groups.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="34" />
+            <state relative-caret-position="285">
+              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addGroup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addGroup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="25" />
               <folding>
-                <marker date="1481531494000" expanded="true" signature="310:356" ph="SELECT * FRO... User" />
-                <marker date="1481531494000" expanded="true" signature="981:1031" ph="..." />
+                <marker date="1481769527000" expanded="true" signature="220:321" ph="INSERT INTO recipe.join_groups... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="headers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/headers.php">
+      <file leaf-file-name="session.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource/session.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="set-session.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource/set-session.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="a.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/a.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding>
+                <marker date="1481763978000" expanded="true" signature="58:168" ph="INSERT INTO RECIPE.user_recent_recipe... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,73 +126,46 @@
       <file leaf-file-name="main-page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main-page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="101" selection-start-line="9" selection-start-column="100" selection-end-line="9" selection-end-column="101" />
               <folding>
-                <marker date="1481518600000" expanded="true" signature="211:368" ph="SELECT disti... join_groups" />
-                <marker date="1481518600000" expanded="true" signature="397:623" ph="SELECT * FRO... recipe" />
-                <marker date="1481518600000" expanded="true" signature="427:623" ph="select disti... join_groups" />
-                <marker date="1481518600000" expanded="true" signature="651:740" ph="SELECT gid, groups" />
-                <marker date="1481518600000" expanded="true" signature="769:991" ph="SELECT * fro... meeting" />
-                <marker date="1481518600000" expanded="true" signature="844:991" ph="select disti... join_groups" />
+                <marker date="1481753287000" expanded="true" signature="211:368" ph="SELECT disti... join_groups" />
+                <marker date="1481753287000" expanded="true" signature="397:623" ph="SELECT * FRO... recipe" />
+                <marker date="1481753287000" expanded="true" signature="427:623" ph="select disti... join_groups" />
+                <marker date="1481753287000" expanded="true" signature="651:740" ph="SELECT gid, groups" />
+                <marker date="1481753287000" expanded="true" signature="769:991" ph="SELECT * fro... meeting" />
+                <marker date="1481753287000" expanded="true" signature="844:991" ph="select disti... join_groups" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipe.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recipe.php">
+      <file leaf-file-name="create.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database_files/create.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding>
-                <marker date="1481531396000" expanded="true" signature="167:211" ph="SELECT * FRO... recipe" />
-                <marker date="1481531396000" expanded="true" signature="353:482" ph="SELECT unit,... recipe" />
-                <marker date="1481531396000" expanded="true" signature="628:732" ph="SELECT tname... recipe" />
-                <marker date="1481531396000" expanded="true" signature="866:975" ph="SELECT rid, review" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="493" column="25" selection-start-line="493" selection-start-column="19" selection-end-line="493" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main-page.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main-page.html">
+      <file leaf-file-name="database_dump.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database_files/database_dump.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            <state relative-caret-position="180">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/footers.php">
+      <file leaf-file-name="database_dump1214.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database_dump1214.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="15" />
+            <state relative-caret-position="255">
+              <caret line="17" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="577" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signup.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/signup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1481531313000" expanded="true" signature="403:549" ph="INSERT INTO RECIPE.USER... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -194,18 +178,36 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_1.sql" />
-        <option value="$PROJECT_DIR$/database_files/create.sql" />
-        <option value="$PROJECT_DIR$/resource/Database.php" />
         <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/signup.php" />
-        <option value="$PROJECT_DIR$/recipe.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/signin.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_1.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_2.sql" />
+        <option value="$PROJECT_DIR$/main-page.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_3.sql" />
+        <option value="$PROJECT_DIR$/main-page-front.php" />
+        <option value="$PROJECT_DIR$/main-page.php" />
+        <option value="$PROJECT_DIR$/search-front.php" />
         <option value="$PROJECT_DIR$/partials/footers.php" />
         <option value="$PROJECT_DIR$/partials/headers.php" />
+        <option value="$PROJECT_DIR$/resource/Database.php" />
+        <option value="$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/search-front.php" />
+        <option value="$PROJECT_DIR$/resource/database.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_4.sql" />
+        <option value="$PROJECT_DIR$/a.php" />
+        <option value="$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/search.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_5.sql" />
+        <option value="$PROJECT_DIR$/recipe.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console.sql" />
+        <option value="$PROJECT_DIR$/search.php" />
+        <option value="$PROJECT_DIR$/searchGroup.php" />
+        <option value="$PROJECT_DIR$/addGroup.php" />
+        <option value="$PROJECT_DIR$/database_files/create.sql" />
+        <option value="$PROJECT_DIR$/resource/set-session.php" />
+        <option value="$PROJECT_DIR$/groups.php" />
       </list>
     </option>
   </component>
@@ -215,12 +217,16 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHPm" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="d7ed2683-9211-4258-b70c-5c4a02a87cde" name="Unnamed" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1198" />
-    <option name="y" value="216" />
-    <option name="width" value="1377" />
-    <option name="height" value="1234" />
+    <option name="y" value="23" />
+    <option name="width" value="1276" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -247,8 +253,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,6 +301,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recipe" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database_files" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -302,7 +322,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/php/php5.6.25/bin" />
+    <property name="last_opened_file_path" value="$USER_HOME$/bin/php/php5.6.25/bin" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -313,8 +333,17 @@
       <recent name="$PROJECT_DIR$/resource" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.signin.php">
+  <component name="RunManager" selected="JavaScript Debug.searchGroup.php">
     <configuration default="false" name="signin.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/recipe/signin.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="a.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/recipe/a.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="search.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/search.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="searchGroup.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/recipe/searchGroup.php">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -331,7 +360,13 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server">
+      <method />
+    </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -363,12 +398,22 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.signin.php" />
+    <configuration default="false" name="Unnamed" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Unnamed" start_url="/recipe/index.php">
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="PHP Web Application.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.signin.php" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.a.php" />
+      <item index="3" class="java.lang.String" itemvalue="PHP Script.search.php" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.searchGroup.php" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.signin.php" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.searchGroup.php" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.a.php" />
+        <item index="2" class="java.lang.String" itemvalue="PHP Script.search.php" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.signin.php" />
       </list>
     </recent_temporary>
   </component>
@@ -384,34 +429,56 @@
       <updated>1481518605590</updated>
       <workItem from="1481518608138" duration="9959000" />
       <workItem from="1481529022186" duration="3328000" />
+      <workItem from="1481561797733" duration="240000" />
+      <workItem from="1481562300428" duration="1059000" />
+      <workItem from="1481741223377" duration="4285000" />
+      <workItem from="1481745895021" duration="2230000" />
+      <workItem from="1481749308523" duration="992000" />
+      <workItem from="1481750362875" duration="14210000" />
     </task>
+    <task id="LOCAL-00001" summary="Add log and change Data to data">
+      <created>1481770674226</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481770674226</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add log table">
+      <created>1481770801340</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1481770801340</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13287000" />
+    <option name="totallyTimeSpent" value="36303000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1198" y="216" width="1377" height="1234" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1276" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23370786" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.115355805" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4189781" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20583469" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2382496" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19816513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -447,312 +514,65 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add log and change Data to data" />
+    <MESSAGE value="Add log table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add log table" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/search.php</url>
+          <line>14</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/search.php</url>
+          <line>40</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="14" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/signin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <marker date="1481531494000" expanded="true" signature="310:356" ph="SELECT * FRO... User" />
-            <marker date="1481531494000" expanded="true" signature="981:1031" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481531313000" expanded="true" signature="403:549" ph="INSERT INTO RECIPE.USER... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php" />
+    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User" />
+    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User" />
+    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User" />
+    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User" />
+    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="4320">
+          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/ERMS.Municipality">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/ERMS.Capability">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/ERMS.Company">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_files/database_dump.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="346" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/css/bootstrap.css" />
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/ERMS.CostPerTime">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_files/create.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="488" column="50" selection-start-line="488" selection-start-column="50" selection-end-line="488" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/Database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b93643bb/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recipe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/footers.php">
+    <entry file="dbDummy://dbtable:/e7835e2f/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.tags" />
+    <entry file="dbDummy://dbtable:/e7835e2f/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.rsvpmeeting" />
+    <entry file="dbDummy://dbtable:/e7835e2f/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.review" />
+    <entry file="dbDummy://dbtable:/e7835e2f/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_2.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="15" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipe.html" />
+    <entry file="file://$PROJECT_DIR$/main-page.html" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481531313000" expanded="true" signature="403:549" ph="INSERT INTO RECIPE.USER... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/signin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <marker date="1481531494000" expanded="true" signature="310:356" ph="SELECT * FRO... User" />
-            <marker date="1481531494000" expanded="true" signature="981:1031" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/headers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481518600000" expanded="true" signature="211:368" ph="SELECT disti... join_groups" />
-            <marker date="1481518600000" expanded="true" signature="397:623" ph="SELECT * FRO... recipe" />
-            <marker date="1481518600000" expanded="true" signature="427:623" ph="select disti... join_groups" />
-            <marker date="1481518600000" expanded="true" signature="651:740" ph="SELECT gid, groups" />
-            <marker date="1481518600000" expanded="true" signature="769:991" ph="SELECT * fro... meeting" />
-            <marker date="1481518600000" expanded="true" signature="844:991" ph="select disti... join_groups" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recipe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <marker date="1481531396000" expanded="true" signature="167:211" ph="SELECT * FRO... recipe" />
-            <marker date="1481531396000" expanded="true" signature="353:482" ph="SELECT unit,... recipe" />
-            <marker date="1481531396000" expanded="true" signature="628:732" ph="SELECT tname... recipe" />
-            <marker date="1481531396000" expanded="true" signature="866:975" ph="SELECT rid, review" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
@@ -768,10 +588,341 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main-page.html">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search-front.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state relative-caret-position="-471">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/json.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7aeeb16e/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.User">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_4.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main-page-front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="181" column="21" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/resource/set-session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/search-front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <marker date="1481752517000" expanded="true" signature="892:1445" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/recipe-front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../xamppfiles/htdocs/recipe/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <marker date="1481764002000" expanded="true" signature="101:181" ph="SELECT * fro... recipe" />
+            <marker date="1481764002000" expanded="true" signature="201:309" ph="SELECT * fro... review" />
+            <marker date="1481764002000" expanded="true" signature="330:383" ph="SELECT * fro... meeting" />
+            <marker date="1481764002000" expanded="true" signature="403:461" ph="SELECT * fro... report" />
+            <marker date="1481764002000" expanded="true" signature="479:587" ph="SELECT * fro... recipe_tag" />
+            <marker date="1481764002000" expanded="true" signature="606:681" ph="SELECT * fro... recipe_tag" />
+            <marker date="1481764002000" expanded="true" signature="1380:1490" ph="INSERT INTO RECIPE.user_recent_recipe... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7aeeb16e/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.user_recent_recipe">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dd86fd51-c112-4383-9998-8abf7c1fb55e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <marker date="1481752517000" expanded="true" signature="310:356" ph="SELECT * FRO... User" />
+            <marker date="1481752517000" expanded="true" signature="981:1031" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/footers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7aeeb16e/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.groups">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/headers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-254">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <marker date="1481753287000" expanded="true" signature="403:549" ph="INSERT INTO RECIPE.USER... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <marker date="1481770643000" expanded="true" signature="101:181" ph="SELECT * fro... recipe" />
+            <marker date="1481770643000" expanded="true" signature="201:309" ph="SELECT * fro... review" />
+            <marker date="1481770643000" expanded="true" signature="330:383" ph="SELECT * fro... meeting" />
+            <marker date="1481770643000" expanded="true" signature="403:461" ph="SELECT * fro... report" />
+            <marker date="1481770643000" expanded="true" signature="479:587" ph="SELECT * fro... recipe_tag" />
+            <marker date="1481770643000" expanded="true" signature="606:681" ph="SELECT * fro... recipe_tag" />
+            <marker date="1481770643000" expanded="true" signature="761:881" ph="INSERT INTO RECIPE.user_recent_search... " />
+            <marker date="1481770643000" expanded="true" signature="1842:1946" ph="INSERT INTO RECIPE.user_recent_recipe... " />
+            <marker date="1481770643000" expanded="true" signature="1842:1952" ph="INSERT INTO RECIPE.user_recent_recipe... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7aeeb16e/dd86fd51-c112-4383-9998-8abf7c1fb55e/recipe.join_groups">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipe-front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="22" selection-end-column="60" />
+          <folding>
+            <marker date="1481764357000" expanded="true" signature="156:266" ph="INSERT INTO RECIPE.user_recent_recipe... " />
+            <marker date="1481764357000" expanded="true" signature="682:726" ph="SELECT * FRO... recipe" />
+            <marker date="1481764357000" expanded="true" signature="868:997" ph="SELECT unit,... recipe" />
+            <marker date="1481764357000" expanded="true" signature="1143:1252" ph="SELECT tid, recipe" />
+            <marker date="1481764357000" expanded="true" signature="1386:1495" ph="SELECT rid, review" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1481767006000" expanded="true" signature="98:125" ph="SELECT * fro... groups" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="101" selection-start-line="9" selection-start-column="100" selection-end-line="9" selection-end-column="101" />
+          <folding>
+            <marker date="1481753287000" expanded="true" signature="211:368" ph="SELECT disti... join_groups" />
+            <marker date="1481753287000" expanded="true" signature="397:623" ph="SELECT * FRO... recipe" />
+            <marker date="1481753287000" expanded="true" signature="427:623" ph="select disti... join_groups" />
+            <marker date="1481753287000" expanded="true" signature="651:740" ph="SELECT gid, groups" />
+            <marker date="1481753287000" expanded="true" signature="769:991" ph="SELECT * fro... meeting" />
+            <marker date="1481753287000" expanded="true" signature="844:991" ph="select disti... join_groups" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_files/database_dump.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_dump1214.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="577" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <marker date="1481763978000" expanded="true" signature="58:168" ph="INSERT INTO RECIPE.user_recent_recipe... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/set-session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <marker date="1481769527000" expanded="true" signature="220:321" ph="INSERT INTO recipe.join_groups... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/groups.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_files/create.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="493" column="25" selection-start-line="493" selection-start-column="19" selection-end-line="493" selection-end-column="25" />
           <folding />
         </state>
       </provider>
