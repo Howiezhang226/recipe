@@ -72,6 +72,7 @@ include_once "partials/headers.php";
 				type: "GET",
 				url: "main-page.php",
 				success: function(data) {
+					console.log(data);
 					$recipeList = $(".recipes");
 					$meetingsList = $(".meetings");
 					$groups = $(".verti-bar");
@@ -158,24 +159,28 @@ include_once "partials/headers.php";
 						$(card).append($(card_block));
 						$meetingsList.append($(card));
 
-
-
-						// var list = document.createElement("li");
-						// $(list).text(data["meetings"][i]["uname"] + " rsvp to " + data["meetings"][i]["mname"]);
-						// $(list).attr('id', data["meetings"][i]["mid"]);
-						// $meetingsList.append($(list));
-
 						$(link).click(function() {
 							console.log(this);
 						});
 					}
 					for (var i = 0; i < data["groups"].length; i++) {
 						var list = document.createElement("li");
-						$(list).text(data["groups"][i]["gname"]);
+						var link = document.createElement("a");
+						$(link).attr('href', "groups-front.php")
+						$(link).text(data["groups"][i]["gname"]);
+						$(list).append($(link));
 						$(list).attr('id', data["groups"][i]["gid"]);
 						$groups.append($(list));
 						$(list).click(function() {
-							console.log(this);
+							$.ajax({
+								type: "POST",
+								url: "resource/set-session.php",
+								data: {'gid': $(this).attr('id')},
+								success: function(data) {
+									console.log(data);
+								},
+								dataType: "json"
+							});
 						});
 					}
 				},

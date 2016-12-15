@@ -2,8 +2,7 @@
 	include_once "resource/database.php";
 	include_once "resource/session.php";
 	if (isset($_SESSION['rid'])) {
-
-        try {
+		try {
             $sqlInsert = "INSERT INTO RECIPE.user_recent_recipe (uname, rid, searchTime) 
                   VALUES (:uname, :rid, now())";
             //use prepared sql to avoid sql injection

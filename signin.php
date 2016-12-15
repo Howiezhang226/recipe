@@ -12,7 +12,9 @@ include_once "partials/headers.php";
         $sqlQuery = "SELECT * FROM recipe.User WHERE uname = :uname";
         $statement = $db->prepare($sqlQuery);
         $statement->execute(array(':uname' => $uname));
-
+        if($statement->rowCount() == 0) {
+            $result = "<p style='padding: 20px; color: red; border: 1px solid gray;'> No this user</p>";
+        }
         while ($row = $statement->fetch()) {
             $uname = $row['uname'];
             $hashed_password = $row['upassword'];
@@ -23,7 +25,7 @@ include_once "partials/headers.php";
             if (password_verify($password, $hashed_password)) {
                 $_SESSION['uname'] = $uname;
                 $_SESSION['loginname'] = $uloginname;
-                header("location:index.php");
+                header("location:main-page-front.php");
             } else {
                 $result = "<p style='padding: 20px; color: red; border: 1px solid gray;'> Invalid username or password</p>";
             }
@@ -37,7 +39,9 @@ include_once "partials/headers.php";
 
     <section class="col col-lg-7">
         <h3>Login Form</h3>
-
+        <?php if (isset($result)) {
+            echo $result;
+        }?>
 
         <form method="post" action="">
             <div class="form-group">
@@ -53,9 +57,7 @@ include_once "partials/headers.php";
 
         </form>
         <p><a href="index.php">Back</a> </p>
-        <?php if (isset($result)) {
-            echo $result;
-        }?>
+
     </section>
 
 </div><!-- /.container -->

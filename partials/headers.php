@@ -19,34 +19,13 @@ ob_start();
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Recipe</a>
-        </div>
-        <div id="navbar">
-            <ul class="nav navbar-nav">
-                <?php if(isset($_SESSION['uname'])): ?>
-                    <li ><a href="main-page-front.php">Home</a></li>
-                    <li ><a href="search-front.php">Search</a></li>
-                    <li><a href="">My Profile</a></li>
-                    <li><a href="logout.php">Log out</a></li>
-                <?php else: ?>
-                <li><a href="signin.php">Login</a></li>
-                <li><a href="signup.php">Sign Up</a></li>
-                <?php endif ?>
-            </ul>
-        </div>
-    </div>
-</nav> -->
 <nav class="navbar navbar-light bg-faded navbar-fixed-top">
         <a class="navbar-brand" href="#">Navbar</a>
             <ul class="nav navbar-nav">
@@ -55,7 +34,10 @@ ob_start();
                         <a class="nav-link" href="main-page-front.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My Profile</a>
+                        <a class="nav-link profile" href="user-front.php">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="allgroups.php">Groups</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Log out</a>
@@ -76,11 +58,19 @@ ob_start();
                 </form>
             <?php endif ?>
     </nav>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
+
+    // $(".profile").click(function() {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "resource/set-session.php",
+    //         data: {'uname': $(".keyWord").val()},
+    //         success: function(data) {
+    //         },
+    //         dataType: "json"
+    //     });
+    // });
+
     <?php if(isset($page_title) && $page_title != "search page"): ?>
         $(".search").click(function() {
             $.ajax({
