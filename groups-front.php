@@ -25,7 +25,7 @@ include_once "partials/headers.php";
 				type: "GET",
 				url: "groups.php",
 				success: function(data) {
-					console.log(data);
+					// console.log(data);
 					// $data = $.parseJSON(data);
 					$(".group-name").text(data["group"][0]["gname"]);
 					$(".group-creator").text(data["group"][0]["creator"]);
@@ -85,15 +85,20 @@ include_once "partials/headers.php";
                                 data: {'mid': $(this).attr('id')},
                                 success: function(data) {
                                     console.log(data);
-                                    if (data == 23000)
+                                    if (data['join'] && data['join'].length == 0) {
+                                    	alert("Please join group first");
+                                    }
+                                    else if (data == 23000)
                                         alert("Wrong! You cannot RSVP this meeting. Maybe you have RSVP it before")
                                     else
                                         alert("RSVP Successful!!")
 
                                 },
                                 error: function (error) {
+                                	console.log(error);
                                     alert("Wrong! You cannot RSVP this meeting. Maybe you have RSVP it before")
-                                }
+                                },
+                                dataType: "json"
                             });
                         });
                         $(meeting).append($(document.createElement("p")).append(button));
