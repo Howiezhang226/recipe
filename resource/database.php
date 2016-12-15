@@ -6,7 +6,7 @@
  * Time: 9:51 PM
  */
 $username='root';
-$password='whwhwh';
+$password='root';
 $dsn = 'mysql:host=127.0.0.1; port:3306; dbname=recipe;charset=utf8';
 
 try{
