@@ -9,7 +9,7 @@
 	$queryTags = "SELECT * from recipe.recipe_tag natural join recipe.recipe natural join recipe.tags where tname like :search";
 	$searchTags = "SELECT * from recipe.recipe_tag natural join recipe.recipe where tid = :tag";
 	if (isset($_POST['search_info'])) {
-        try {
+		try {
             $sqlInsert = "INSERT INTO RECIPE.user_recent_search (uname, keywords, searchTime) 
                   VALUES (:uname, :keywords, now())";
             //use prepared sql to avoid sql injection
@@ -24,7 +24,9 @@
 		$keyword = '%'.$_POST['search_info'].'%';
 		$querySearch = search($keyword, $db, $queryRecipe, $queryReview, $queryMeeting, $queryReport, $queryTags);
 		// echo $querySearch['report'];
-		echo json_encode($querySearch);
+		$result = json_encode($querySearch);
+		echo $result;
+		// echo json_encode($querySearch);
 	}
 
 	if (isset($_SESSION['search_info_key'])) {
@@ -35,7 +37,7 @@
 	}
 
 	if (isset($_SESSION['search_tag'])) {
-        try {
+		try {
             $sqlInsert = "INSERT INTO RECIPE.user_recent_recipe (uname, tid, searchTime) 
                   VALUES (:uname, :tid, now())";
             //use prepared sql to avoid sql injection
