@@ -120,6 +120,29 @@ include_once "partials/headers.php";
 				}
 			});
 		</script>
+		<form method="post" action="">
+			<div></div>
+			<div class="form-group">
+				<label for="Content">Content</label>
+				<textarea class="form-control" name="content" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="Suggestion">Suggestion</label>
+				<textarea class="form-control" name="suggestion" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="exampleSelect1">Rating</label>
+				<select class="form-control" name="rating">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<button type="submit"  class="btn btn-primary pull-right" name="review" value="review">Review</button>
+		</form>
+
 	</body>
 </html>
 <?php
