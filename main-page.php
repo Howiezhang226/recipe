@@ -1,5 +1,5 @@
 <?php
-	// include_once 'resource/Database.php';
+	// include_once 'resource/database.php';
 
 	include_once "resource/database.php";
 	include_once "resource/session.php";

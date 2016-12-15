@@ -1,6 +1,6 @@
 <?php
 $page_title = "Sign Up";
-include_once 'resource/Database.php';
+include_once 'resource/database.php';
 include_once "partials/headers.php";
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
