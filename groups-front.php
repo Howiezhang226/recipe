@@ -18,10 +18,9 @@ include_once "partials/headers.php";
 			<ul class="meetings"></ul>
 		</div>
 		<div id="accordion" role="tablist" aria-multiselectable="true">
- 
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>		<script>
 			$.ajax({
 				type: "GET",
 				url: "groups.php",
@@ -56,6 +55,28 @@ include_once "partials/headers.php";
 						$(meeting).append('<p>' + $meeting["mlocation"] + '</p>');
 						$(meeting).append($(rsvp));
 						$(meeting).append($(reports));
+                        button = $("<button>RSVP</button>");
+                        button.attr('id', $meeting["mid"]);
+                        button.click(function () {
+                            $.ajax({
+                                type: "POST",
+                                url: "joinmeeting.php",
+                                data: {'mid': $(this).attr('id')},
+                                success: function(data) {
+                                    console.log(data);
+                                    if (data == 23000)
+                                        alert("Wrong! You cannot RSVP this meeting. Maybe you have RSVP it before")
+                                    else
+                                        alert("RSVP Successful!!")
+
+                                },
+                                error: function (error) {
+                                    alert("Wrong! You cannot RSVP this meeting. Maybe you have RSVP it before")
+                                }
+                            });
+                        });
+                        $(meeting).append(button);
+
 
 
 						$(list).append($(meeting));
@@ -68,6 +89,7 @@ include_once "partials/headers.php";
         		},	
 				dataType: "json"
 			});
+
 		</script>
 	</body>
 </html>

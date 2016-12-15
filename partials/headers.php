@@ -37,6 +37,9 @@ ob_start();
                         <a class="nav-link" href="#">My Profile</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="allgroups.php">Groups</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="logout.php">Log out</a>
                     </li>
                     <?php else: ?>

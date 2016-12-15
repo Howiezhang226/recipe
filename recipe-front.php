@@ -1,7 +1,31 @@
 <?php
 include_once "resource/session.php";
+include_once "resource/database.php";
 $page_title = "recipe page";
 include_once "partials/headers.php";
+
+if (isset($_POST['review'])) {
+	try{
+		$sqlInsert = "INSERT INTO recipe.review (uname, rid, content, suggestion, rating) 
+                  VALUES (:uname, :rid, :content, :suggestion, :rating)";
+		//use prepared sql to avoid sql injection
+		$statement = $db -> prepare($sqlInsert);
+		$statement -> execute(
+			array(
+				':uname' => $_SESSION['uname'],
+				':rid'=> $_SESSION['rid'],
+				':content' => $_POST['content'],
+				':suggestion' => $_POST['suggestion'],
+				':rating' => $_POST['rating']
+			));
+		if ($statement -> rowCount() == 1) {
+			$result =  "<p> registeration successful! <p>";
+		}
+	} catch (PDOException $pdoex) {
+		echo $pdoex -> getMessage();
+		$result = "<p> An error! <p>";
+	}
+}
 ?>
 <html>
 	<body>
@@ -13,8 +37,6 @@ include_once "partials/headers.php";
 			<p class="recipe-title"></p>
 			<p class="recipe-description"></p>
 			<p class="recipe-serving-number"></p>
-
-			<a href="main-page-front.php">back</a>
 
 			<ul class="ingredients"></ul>
 
@@ -115,10 +137,32 @@ include_once "partials/headers.php";
 					// 	$(list).append($(review));
 					// 	$(".reviews").append($(list));
 					// }
-					console.log(data);
+					//console.log(data);
 				}
 			});
 		</script>
+		<form method="post" action="">
+			<div></div>
+			<div class="form-group">
+				<label for="Content">Content</label>
+				<textarea class="form-control" name="content" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="Suggestion">Suggestion</label>
+				<textarea class="form-control" name="suggestion" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="exampleSelect1">Rating</label>
+				<select class="form-control" name="rating">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<button type="submit"  class="btn btn-primary pull-right" name="review" value="review">Review</button>
+		</form>
 	</body>
 </html>
 <?php

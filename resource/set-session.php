@@ -10,8 +10,12 @@
         // echo json_encode($_SESSION['rid']);
     }
 
-    if (isset($_POST['git']) || isset($gid)) {
+    if (isset($_POST['gid'])) {
         $_SESSION['gid'] = $_POST['gid'];
+    }
+
+    if(isset($gid)) {
+        $_SESSION['gid'] = $gid;
     }
 
     if (isset($_POST['search_info_key'])) {
