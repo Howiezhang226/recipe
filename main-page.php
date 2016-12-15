@@ -11,7 +11,7 @@
 
 	        $recipeQuery = "SELECT * FROM recipe.recipe, (select distinct uname from recipe.join_groups natural join recipe.User, (". $queryMemebers .") as group_memeber where recipe.recipe.username = group_memeber.uname and group_memeber.uname != :uname";
 
-	        $groupQuery = "SELECT gid, gname FROM recipe.groups natural join recipe.join_groups where uname = :uname";
+	        $groupQuery = "SELECT distinct gid, gname FROM recipe.groups natural join recipe.join_groups where uname = :uname";
 	        $meetingQuery = "SELECT * from recipe.meeting natural join recipe.rsvpmeeting natural join (select distinct uname from recipe.join_groups natural join recipe.User, (". $queryMemebers .") as group_memeber where group_memeber.uname != :uname";
 	        //use prepared sql to avoid sql injection
 	        $statement = execute($recipeQuery, $db);
