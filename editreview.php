@@ -29,6 +29,8 @@ if (isset($_POST['editreview'])) {
         ':suggestion' => $_POST['suggestion'],
         ':rating' => $_POST['rating'],
         ));
+    header("location:editreview.php");
+
 }
 ?>
 
