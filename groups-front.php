@@ -46,8 +46,29 @@ include_once "partials/headers.php";
 						for (var j = 0; j < data["report"].length; j++) {
 							if (data["report"][j]["mid"] == $meeting["mid"]) {
 								var report = document.createElement("li");
-								$(report).text(data["report"][j]["uname"] + " post report");
-								$(reports).append($(report));
+								$link = $(document.createElement("a"))
+								.attr('href', 'report-front.php')
+								.attr('id', data["report"][j]["mid"] + " " + data["report"][j]["uname"])
+								.text(data["report"][j]["uname"] + " post report");
+								$(report).append($link);
+								$(reports).append($link);
+
+								$link.click(function() {
+									$ids = $(this).attr('id').split(" ");
+									$input = {
+										mid : $ids[0],
+										uname : $ids[1]
+									}
+									$.ajax({
+										type: "POST",
+										url: "resource/set-session.php",
+										data: {'report': $input},
+										success: function(data) {
+											console.log(data);
+										},
+										dataType: "json"
+									});
+								})
 							}
 						}
 						$(meeting).append('<p>' + $meeting["mname"] + '</p>');
@@ -55,7 +76,7 @@ include_once "partials/headers.php";
 						$(meeting).append('<p>' + $meeting["mlocation"] + '</p>');
 						$(meeting).append($(rsvp));
 						$(meeting).append($(reports));
-                        button = $("<button>RSVP</button>");
+                        button = $("<button class=\"btn btn-primary\">RSVP</button>");
                         button.attr('id', $meeting["mid"]);
                         button.click(function () {
                             $.ajax({
@@ -75,7 +96,24 @@ include_once "partials/headers.php";
                                 }
                             });
                         });
-                        $(meeting).append(button);
+                        $(meeting).append($(document.createElement("p")).append(button));
+                        report_button = $(document.createElement("a"))
+                        .attr("href", "createReport.php")
+                        .addClass("btn btn-primary pull-right")
+                        .text("Post Report");
+                        report_button.attr('id', $meeting["mid"]);
+                        report_button.click(function() {
+							$.ajax({
+								type: "POST",
+								url: "resource/set-session.php",
+								data: {'mid': $(this).attr('id')},
+								success: function(data) {
+									console.log(data);
+								},
+								dataType: "json"
+							});
+                        });	
+                        $(meeting).append($(document.createElement("p")).append(report_button));
 
 
 

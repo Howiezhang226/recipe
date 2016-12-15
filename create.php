@@ -38,4 +38,21 @@
 		}
 	}
 
+	if (isset($_POST['create_report'])) {
+		$insertData = $_POST['create_report'];
+		try {
+			$insertQuery = "INSERT into recipe.report (mid, uname, description) values (:mid, :uname, :descr)";
+		    $statement = $db -> prepare($insertQuery);
+	        $statement -> execute(
+	            array(
+	            	':mid' => $_SESSION['mid'],
+	            	':uname' => $_SESSION['uname'],
+	            	'descr' => $insertData['description']
+            ));
+		} catch (PDOException $pdoex) {
+			echo $pdoex -> getMessage();
+			$result = "<p> An error! <p>";
+		}
+	}
+
 ?>
