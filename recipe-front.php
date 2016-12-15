@@ -2,7 +2,33 @@
 include_once "resource/session.php";
 $page_title = "recipe page";
 include_once "partials/headers.php";
+include_once "resource/database.php";
+
+if (isset($_POST['review'])) {
+	try{
+		$sqlInsert = "INSERT INTO recipe.review (uname, rid, content, suggestion, rating) 
+                  VALUES (:uname, :rid, :content, :suggestion, :rating)";
+		//use prepared sql to avoid sql injection
+		$statement = $db -> prepare($sqlInsert);
+		$statement -> execute(
+			array(
+				':uname' => $_SESSION['uname'],
+				':rid'=> $_SESSION['rid'],
+				':content' => $_POST['content'],
+				':suggestion' => $_POST['suggestion'],
+				':rating' => $_POST['rating']
+			));
+		if ($statement -> rowCount() == 1) {
+			$result =  "<p> registeration successful! <p>";
+		}
+	} catch (PDOException $pdoex) {
+		echo $pdoex -> getMessage();
+		$result = "<p> An error! <p>";
+	}
+}
 ?>
+
+
 <html>
 	<body>
 		<style>
@@ -21,7 +47,7 @@ include_once "partials/headers.php";
 			<ul class="tags"></ul>
 			<hr>
 			
-			<!-- <div class="reviews" id="accordion" role="tablist" aria-multiselectable="true"></div> -->
+			<div class="reviews" id="accordion" role="tablist" aria-multiselectable="true"></div>
 
 		  </div>
 		  <h4>Write Review</h4>
@@ -69,41 +95,41 @@ include_once "partials/headers.php";
 					for (var i = 0; i < $data["reviews"].length; i++) {
 						$review = $data["reviews"][i];
 
-						$card = $(document.createElement("div")).addClass("card");
-						$card.append(
-							$(document.createElement("div"))
-							.addClass("card-header")
-							.attr("role", "tab")
-							.attr("id", "headingOne").append(
-								$(document.createElement("h5"))
-								.addClass("mb-0").append(
-									$(document.createElement("a"))
-									.attr("data-toggle", "collapse")
-									.attr("data-parent", "#accordion")
-									.attr("href", "#" + i)
-									.attr("aria-expanded", "true")
-									.attr("aria-controls", "" + i)
-									.text($review["uname"] + "'s review")
-									)
-								)
-						);
-						$card.append(
-							$(document.createElement("div"))
-							.addClass("collapse in")
-							.attr("id", i)
-							.attr("role", "tabpanel")
-							.attr("aria-labelledby", "headingOne")
-							.append(
-								$(document.createElement("div"))
-								.addClass("card-block")
-								.append('<p>' + $review["uname"] + '</p>')
-								.append('<p>' + $review["content"] + '</p>')
-								.append('<p>' + $review["suggestion"] + '</p>')
-								.append('<p>' + "rating: " + $review["rating"] + '</p>')
-								)
-							);
+						// $card = $(document.createElement("div")).addClass("card");
+						// $card.append(
+						// 	$(document.createElement("div"))
+						// 	.addClass("card-header")
+						// 	.attr("role", "tab")
+						// 	.attr("id", "headingOne").append(
+						// 		$(document.createElement("h5"))
+						// 		.addClass("mb-0").append(
+						// 			$(document.createElement("a"))
+						// 			.attr("data-toggle", "collapse")
+						// 			.attr("data-parent", "#accordion")
+						// 			.attr("href", "#" + i)
+						// 			.attr("aria-expanded", "true")
+						// 			.attr("aria-controls", "" + i)
+						// 			.text($review["uname"] + "'s review")
+						// 			)
+						// 		)
+						// );
+						// $card.append(
+						// 	$(document.createElement("div"))
+						// 	.addClass("collapse in")
+						// 	.attr("id", i)
+						// 	.attr("role", "tabpanel")
+						// 	.attr("aria-labelledby", "headingOne")
+						// 	.append(
+						// 		$(document.createElement("div"))
+						// 		.addClass("card-block")
+						// 		.append('<p>' + $review["uname"] + '</p>')
+						// 		.append('<p>' + $review["content"] + '</p>')
+						// 		.append('<p>' + $review["suggestion"] + '</p>')
+						// 		.append('<p>' + "rating: " + $review["rating"] + '</p>')
+						// 		)
+						// 	);
 
-						$(".reviews").append($card);
+						// $(".reviews").append($card);
 
 
 
@@ -113,7 +139,29 @@ include_once "partials/headers.php";
 						$(review).append('<p>' + $review["content"] + '</p>');
 						$(review).append('<p>' + $review["suggestion"] + '</p>');
 						$(review).append('<p>' + "rating: " + $review["rating"] + '</p>');
+
 						$(list).append($(review));
+
+						if ($review['uname'] == $data['uname']) {
+							$link = $(document.createElement("a"))
+							.text("edit")
+							.addClass("btn btn-primary")
+							// .attr('href', "editReview.php")
+							.attr('id', $review['rid'])
+							.click(function() {
+								$.ajax({
+									type: "POST",
+									url: "editReview.php",
+									data: {'rid': $(this).attr('id')},
+									success: function(data) {
+										// console.log(data);
+									},
+									dataType: "json"
+								});
+								location.href = "editReview.php";
+							});
+							$(list).append($link);
+						}
 						$(".reviews").append($(list));
 					}
 					console.log(data);

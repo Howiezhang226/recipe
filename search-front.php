@@ -104,6 +104,8 @@ include_once "partials/headers.php";
 				}
 				if ("reviews" in data) {
 					for (var i = 0; i < data["reviews"].length; i++) {
+
+						
 						var list = document.createElement("li");
 						var link = document.createElement("a");
 						$(link).attr('href', "recipe-front.php");

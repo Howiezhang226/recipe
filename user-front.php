@@ -20,6 +20,14 @@ include_once "partials/headers.php";
 			Meeting RSVP by me:
 			<div class="meeting"></div>
 		</div>
+		<div>
+			Review post by me:
+			<div class="review"></div>
+		</div>
+		<div>
+			Report post by me:
+			<div class="report"></div>
+		</div>
 	<div>
 		<a href="createRecipe.php" class="btn btn-primary pull-right">create recipe</a>
 		<a href="createGroup.php" class="btn btn-primary pull-right">create group</a>
@@ -93,11 +101,72 @@ include_once "partials/headers.php";
 						$recipe = data["meeting"][i];
 						$link = $(document.createElement("a"));
 						$link.attr('href', "groups-front.php");
-						$link.attr('id', $recipe['mid']);
+						$link.attr('id', $recipe['mholder']);
 						$link.text($recipe['mname']);
 						$list = $(document.createElement("li"));
 						$list.append($link);
 						$(".meeting").append($list);
+						$link.click(function() {
+							$.ajax({
+								type: "POST",
+								url: "resource/set-session.php",
+								data: {'gid': $(this).attr('id')},
+								success: function(data) {
+									console.log(data);
+								},
+								dataType: "json"
+							});
+						});
+
+					}
+
+					for (var i = 0; i < data["review"].length; i++) {
+						$review = data["review"][i];
+						$link = $(document.createElement("a"));
+						$link.attr('href', "recipe-front.php");
+						$link.attr('id', $review['rid']);
+						$link.text("review for " + $review['title']);
+						$list = $(document.createElement("li"));
+						$list.append($link);
+						$(".review").append($list);
+						$link.click(function() {
+							$.ajax({
+								type: "POST",
+								url: "resource/set-session.php",
+								data: {'rid': $(this).attr('id')},
+								success: function(data) {
+									console.log(data);
+								},
+								dataType: "json"
+							});
+						});
+
+					}
+
+					for (var i = 0; i < data["report"].length; i++) {
+						$report = data["report"][i];
+						$link = $(document.createElement("a"));
+						$link.attr('href', "report-front.php");
+						$link.attr('id', $report['mid']);
+						$link.text("report for " + $report['mname']);
+						$list = $(document.createElement("li"));
+						$list.append($link);
+						$(".report").append($list);
+						$link.click(function() {
+							$input = {
+								uname : $report['uname'],
+								mid : $report['mid']
+							}
+							$.ajax({
+								type: "POST",
+								url: "resource/set-session.php",
+								data: {'report': $input},
+								success: function(data) {
+									console.log(data);
+								},
+								dataType: "json"
+							});
+						});
 
 					}
 

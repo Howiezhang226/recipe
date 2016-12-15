@@ -3,10 +3,11 @@ $page_title = "Edit Review";
 include_once "resource/database.php";
 include_once "resource/session.php";
 include_once "partials/headers.php";
-if(isset($_POST['rid']))
+if(isset($_POST['rid'])) :
     $rid = $_POST['rid'];
-else
+else :
     $rid = 1;
+endif;
 if (isset($rid)) {
 
 
@@ -34,7 +35,9 @@ if (isset($_POST['editreview'])) {
 
 
 <div class="container">
-
+<?php
+echo $rid;
+?>
     <form method="post" action="">
         <div></div>
         <div class="form-group">

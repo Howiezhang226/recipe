@@ -33,6 +33,8 @@
 	        $statement = execute($queryReviews, $db);
 	        $queryResult['reviews'] = $statement->fetchAll();
 
+	        $queryResult['uname'] = $_SESSION['uname'];
+
 	        echo json_encode($queryResult);
 	    } catch (PDOException $pdoex) {
 	        echo $pdoex -> getMessage();
