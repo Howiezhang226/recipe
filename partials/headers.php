@@ -34,7 +34,7 @@ ob_start();
                         <a class="nav-link" href="main-page-front.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My Profile</a>
+                        <a class="nav-link profile" href="user-front.php">My Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Log out</a>
@@ -56,6 +56,18 @@ ob_start();
             <?php endif ?>
     </nav>
 <script>
+
+    // $(".profile").click(function() {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "resource/set-session.php",
+    //         data: {'uname': $(".keyWord").val()},
+    //         success: function(data) {
+    //         },
+    //         dataType: "json"
+    //     });
+    // });
+
     <?php if(isset($page_title) && $page_title != "search page"): ?>
         $(".search").click(function() {
             $.ajax({

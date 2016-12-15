@@ -72,6 +72,7 @@ include_once "partials/headers.php";
 				type: "GET",
 				url: "main-page.php",
 				success: function(data) {
+					console.log(data);
 					$recipeList = $(".recipes");
 					$meetingsList = $(".meetings");
 					$groups = $(".verti-bar");
@@ -146,7 +147,7 @@ include_once "partials/headers.php";
 						$(card_header).text("Meeting");
 						$(title).text(data["meetings"][i]["mname"]);
 						$(content).text(data["meetings"][i]["uname"] + " rsvp to " + data["meetings"][i]["mname"]);
-						$(link).attr('href', "groups-front.php");
+						$(link).attr('href', "#");
 						$(link).text("check");
 
 						$(link).attr('id', data["meetings"][i]["mid"]);
@@ -159,23 +160,14 @@ include_once "partials/headers.php";
 						$meetingsList.append($(card));
 
 						$(link).click(function() {
-							$.ajax({
-								type: "POST",
-								url: "main-page.php",
-								data: {'gid': $(this).attr('id')},
-								success: function(data) {
-									console.log(data);
-								},
-								dataType: "json"
-							});
-
+							console.log(this);
 						});
 					}
 					for (var i = 0; i < data["groups"].length; i++) {
 						var list = document.createElement("li");
 						var link = document.createElement("a");
-						$(link).attr('href', 'groups-front.php');
-						$(link).text(data["groups"][i]["gname"])
+						$(link).attr('href', "groups-front.php")
+						$(link).text(data["groups"][i]["gname"]);
 						$(list).append($(link));
 						$(list).attr('id', data["groups"][i]["gid"]);
 						$groups.append($(list));
