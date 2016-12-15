@@ -21,10 +21,9 @@ include_once "partials/headers.php";
 			<ul class="tags"></ul>
 			<hr>
 			
-			<ul class="reviews"></ul>
-		</div>
+			<!-- <div class="reviews" id="accordion" role="tablist" aria-multiselectable="true"></div> -->
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		  </div>
 		<script>
 			$.ajax({
 				type: "GET",
@@ -66,17 +65,56 @@ include_once "partials/headers.php";
 
 					}
 
-					for (var i = 0; i < $data["reviews"].length; i++) {
-						$review = $data["reviews"][i];
-						var list = document.createElement("li");
-						var review = document.createElement("div");
-						$(review).append('<p>' + $review["uname"] + '</p>');
-						$(review).append('<p>' + $review["content"] + '</p>');
-						$(review).append('<p>' + $review["suggestion"] + '</p>');
-						$(review).append('<p>' + "rating: " + $review["rating"] + '</p>');
-						$(list).append($(review));
-						$(".reviews").append($(list));
-					}
+					// for (var i = 0; i < $data["reviews"].length; i++) {
+					// 	$review = $data["reviews"][i];
+
+					// 	$card = $(document.createElement("div")).addClass("card");
+					// 	$card.append(
+					// 		$(document.createElement("div"))
+					// 		.addClass("card-header")
+					// 		.attr("role", "tab")
+					// 		.attr("id", "headingOne").append(
+					// 			$(document.createElement("h5"))
+					// 			.addClass("mb-0").append(
+					// 				$(document.createElement("a"))
+					// 				.attr("data-toggle", "collapse")
+					// 				.attr("data-parent", "#accordion")
+					// 				.attr("href", "#" + i)
+					// 				.attr("aria-expanded", "true")
+					// 				.attr("aria-controls", "" + i)
+					// 				.text($review["uname"] + "'s review")
+					// 				)
+					// 			)
+					// 	);
+					// 	$card.append(
+					// 		$(document.createElement("div"))
+					// 		.addClass("collapse in")
+					// 		.attr("id", i)
+					// 		.attr("role", "tabpanel")
+					// 		.attr("aria-labelledby", "headingOne")
+					// 		.append(
+					// 			$(document.createElement("div"))
+					// 			.addClass("card-block")
+					// 			.append('<p>' + $review["uname"] + '</p>')
+					// 			.append('<p>' + $review["content"] + '</p>')
+					// 			.append('<p>' + $review["suggestion"] + '</p>')
+					// 			.append('<p>' + "rating: " + $review["rating"] + '</p>')
+					// 			)
+					// 		);
+
+					// 	$(".reviews").append($card);
+
+
+
+					// 	var list = document.createElement("li");
+					// 	var review = document.createElement("div");
+					// 	$(review).append('<p>' + $review["uname"] + '</p>');
+					// 	$(review).append('<p>' + $review["content"] + '</p>');
+					// 	$(review).append('<p>' + $review["suggestion"] + '</p>');
+					// 	$(review).append('<p>' + "rating: " + $review["rating"] + '</p>');
+					// 	$(list).append($(review));
+					// 	$(".reviews").append($(list));
+					// }
 					console.log(data);
 				}
 			});

@@ -1,5 +1,5 @@
 <?php
-	// include_once 'resource/database.php';
+	// include_once 'resource/Database.php';
 
 	include_once "resource/database.php";
 	include_once "resource/session.php";
@@ -24,6 +24,24 @@
 			$queryResult['meetings'] = $statement->fetchAll();
 
 	        echo json_encode($queryResult);
+	    } catch (PDOException $pdoex) {
+	        echo $pdoex -> getMessage();
+	        $result = "<p> An error! <p>";
+	    }
+	}
+
+	if (isset($_POST['mid'])) {
+		try{
+
+			$queryResult = [];
+			$query = "SELECT mholder from meeting where mid = :mid";
+			$statement = $db -> prepare($query);
+        	$statement -> execute(
+	            array(
+	            	':mid' => $_SESSION['mid']
+            ));
+        	$queryResult['group'] = $statement->fetchAll();
+        	$_SESSION['gid'] = $queryResult['group'][0]['mholder'];
 	    } catch (PDOException $pdoex) {
 	        echo $pdoex -> getMessage();
 	        $result = "<p> An error! <p>";
