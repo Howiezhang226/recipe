@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.11, for osx10.11 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.16, for osx10.11 (x86_64)
 --
 -- Host: localhost    Database: recipe
 -- ------------------------------------------------------
--- Server version	5.7.11
+-- Server version	5.7.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -171,7 +171,7 @@ CREATE TABLE `join_groups` (
 
 LOCK TABLES `join_groups` WRITE;
 /*!40000 ALTER TABLE `join_groups` DISABLE KEYS */;
-INSERT INTO `join_groups` VALUES (1,'david','2016-11-24 17:42:21'),(1,'haozhang','2016-11-24 17:42:23'),(1,'heng','2016-11-24 17:42:21'),(1,'hengwu','2016-11-24 17:42:24'),(2,'hengwu','2016-11-24 17:42:26');
+INSERT INTO `join_groups` VALUES (1,'david','2016-11-24 17:42:21'),(1,'haozhang','2016-11-24 17:42:23'),(1,'heng','2016-11-24 17:42:21'),(1,'heng','2016-12-14 21:38:58'),(2,'heng','2016-12-14 21:39:08'),(2,'heng','2016-12-14 21:39:09'),(1,'hengwu','2016-11-24 17:42:24'),(2,'hengwu','2016-11-24 17:42:26');
 /*!40000 ALTER TABLE `join_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -483,6 +483,87 @@ LOCK TABLES `tags` WRITE;
 INSERT INTO `tags` VALUES (1,'spicy'),(2,'chinese'),(3,'warm'),(4,'sugar'),(5,'italian'),(11,'cake');
 /*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user_recent_recipe`
+--
+
+DROP TABLE IF EXISTS `user_recent_recipe`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_recent_recipe` (
+  `uname` varchar(20) NOT NULL,
+  `rid` int(10) NOT NULL,
+  `searchTime` datetime NOT NULL,
+  PRIMARY KEY (`uname`,`rid`,`searchTime`),
+  KEY `rid` (`rid`),
+  CONSTRAINT `user_recent_recipe_ibfk_1` FOREIGN KEY (`uname`) REFERENCES `User` (`uname`),
+  CONSTRAINT `user_recent_recipe_ibfk_2` FOREIGN KEY (`rid`) REFERENCES `recipe` (`rid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_recent_recipe`
+--
+
+LOCK TABLES `user_recent_recipe` WRITE;
+/*!40000 ALTER TABLE `user_recent_recipe` DISABLE KEYS */;
+INSERT INTO `user_recent_recipe` VALUES ('heng',3,'2016-12-14 20:12:48'),('heng',3,'2016-12-14 20:20:19'),('heng',4,'2016-12-14 20:21:05');
+/*!40000 ALTER TABLE `user_recent_recipe` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_recent_search`
+--
+
+DROP TABLE IF EXISTS `user_recent_search`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_recent_search` (
+  `uname` varchar(20) NOT NULL,
+  `keywords` varchar(50) NOT NULL,
+  `searchTime` datetime NOT NULL,
+  PRIMARY KEY (`uname`,`keywords`,`searchTime`),
+  CONSTRAINT `user_recent_search_ibfk_1` FOREIGN KEY (`uname`) REFERENCES `User` (`uname`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_recent_search`
+--
+
+LOCK TABLES `user_recent_search` WRITE;
+/*!40000 ALTER TABLE `user_recent_search` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_recent_search` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_recent_tags`
+--
+
+DROP TABLE IF EXISTS `user_recent_tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_recent_tags` (
+  `uname` varchar(20) NOT NULL,
+  `tid` int(10) NOT NULL,
+  `searchTime` datetime NOT NULL,
+  PRIMARY KEY (`uname`,`tid`,`searchTime`),
+  KEY `tid` (`tid`),
+  CONSTRAINT `user_recent_tags_ibfk_1` FOREIGN KEY (`uname`) REFERENCES `User` (`uname`),
+  CONSTRAINT `user_recent_tags_ibfk_2` FOREIGN KEY (`tid`) REFERENCES `tags` (`tid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_recent_tags`
+--
+
+LOCK TABLES `user_recent_tags` WRITE;
+/*!40000 ALTER TABLE `user_recent_tags` DISABLE KEYS */;
+INSERT INTO `user_recent_tags` VALUES ('heng',1,'2016-12-14 20:06:19'),('heng',1,'2016-12-14 20:06:58'),('heng',2,'2016-12-14 20:07:09');
+/*!40000 ALTER TABLE `user_recent_tags` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -493,4 +574,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-09 16:35:51
+-- Dump completed on 2016-12-14 21:58:55
