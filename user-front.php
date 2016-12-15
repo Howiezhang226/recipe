@@ -23,8 +23,9 @@ include_once "partials/headers.php";
 	<div>
 		<a href="createRecipe.php" class="btn btn-primary pull-right">create recipe</a>
 		<a href="createGroup.php" class="btn btn-primary pull-right">create group</a>
-	</div>	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script>
 		$.ajax({
 				type: "GET",
@@ -109,6 +110,56 @@ include_once "partials/headers.php";
 				dataType: "json"
 			});
 		</script>
+	<div ng-app="userApp" ng-controller="recentCtrl" ng-init="getRecentActivity()">
+		<h5>Recent 5 interested recipes</h5>
+		<div ng-repeat="rec in results.recipe">
+			<p>recipe title :{{ rec.title }}</p>
+		</div>
+		<h5>Recent 5 interested tags</h5>
+		<div ng-repeat="rec in results.tags">
+			<p>tag name:{{ rec.tname }}</p>
+		</div>
+		<h5>Recent 5 interested keywords</h5>
+		<div ng-repeat="rec in results.search">
+			<p>keywords:{{ rec.keywords }}</p>
+		</div>
+
+	</div>
+	<script>
+		var app = angular.module('userApp', []);
+		app.controller('recentCtrl', function($scope, $http) {
+			$scope.getRecentActivity = function () {
+				$http.get("recent.php").then(
+					function (response) {
+						$scope.results = response.data;
+					});
+			};
+			$scope.addGroup = function (gid) {
+				data = {
+					'gid' : gid
+				};
+				$http.post('addGroup.php', data)
+					.then(function (data) {
+						console.log(data);
+					},function (data) {
+						console.log("error");
+					});
+			};
+
+			$scope.searchGroup = function (gid) {
+				data = {
+					'gid' : gid
+				};
+				$http.post('resource/set-session.php', data)
+					.then(function (data) {
+						console.log(data);
+						window.location.href='groups-front.php';
+					},function (data) {
+						console.log("error");
+					});
+			};
+		})
+	</script>
 	</body>
 </html>
 <?php
