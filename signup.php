@@ -8,6 +8,7 @@ if (isset($_POST['username'])) {
     $password = $_POST['password'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
+    //$result = "<p style='padding: 20px; color: red; border: 1px solid gray;'> Invalid username or password</p>";
 
     $hash_password = password_hash($password,PASSWORD_DEFAULT);
     try{
@@ -25,30 +26,29 @@ if (isset($_POST['username'])) {
             ));
         if ($statement -> rowCount() == 1) {
             $result =  "<p> registeration successful! <p>";
-       }
-    } catch (PDOException $pdoex) {
-        echo $pdoex -> getMessage();
-        $result = "<p> An error! <p>";
+            header("location:signin.php");
+
+        }
+        else {
+            throw new Exception();
+        }
+    } catch (Exception $exception) {
+        $error = "<p style='padding: 20px; color: red; border: 1px solid gray;'>It seems something wrong!</p>";
+        echo $exception -> getMessage();
     }
 
 }
 ?>
 
-
 <div class="container">
     <section class="col col-lg-7 ">
         <h3>Registration Form</h3><hr>
+
         <?php
-        if (isset($result)) {
-            echo $result;
+        if (isset($error)) {
+            echo $error;
         }
-
         ?>
-        <?php
-        if(!empty($form_error)) echo show_errors($form_error);
-        ?>
-
-
         <form method="post" action="">
             <div  class="form-group">
                 <label for="UsernameField">Username</label>
