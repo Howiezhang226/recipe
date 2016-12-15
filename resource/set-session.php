@@ -10,12 +10,22 @@
         // echo json_encode($_SESSION['rid']);
     }
 
+    if (isset($_POST['report'])) {
+    	$_SESSION['report']['mid'] = $_POST['report']['mid'];
+        $_SESSION['report']['uname'] = $_POST['report']['uname'];
+        // echo json_encode($_SESSION['rid']);
+    }
+
     if (isset($_POST['gid'])) {
         $_SESSION['gid'] = $_POST['gid'];
     }
 
     if(isset($gid)) {
         $_SESSION['gid'] = $gid;
+    }
+
+    if (isset($_POST['mid'])) {
+        $_SESSION['mid'] = $_POST['mid'];
     }
 
     if (isset($_POST['search_info_key'])) {
