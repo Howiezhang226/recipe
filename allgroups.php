@@ -45,8 +45,8 @@ include_once "partials/headers.php";
             $http.post('/recipe/resource/set-session.php', data)
                 .then(function (data) {
                     console.log(data);
-                    $location.path("www.baidu.com");
-                },function (data) {
+                    window.location.href='groups-front.php';
+                    },function (data) {
                     console.log("error");
                 });
         };
