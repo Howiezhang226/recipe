@@ -33,7 +33,6 @@ include_once "partials/headers.php";
             $http.post('addGroup.php', data)
                 .then(function (data) {
                     console.log(data);
-                    $scope.PostDataResponse = data;
                 },function (data) {
                     console.log("error");
                 });
@@ -43,10 +42,10 @@ include_once "partials/headers.php";
             data = {
                 'gid' : gid
             };
-            $http.post('./resource/set-session.php', data)
+            $http.post('/recipe/resource/set-session.php', data)
                 .then(function (data) {
                     console.log(data);
-                    $location.path("/a");
+                    $location.path("www.baidu.com");
                 },function (data) {
                     console.log("error");
                 });
