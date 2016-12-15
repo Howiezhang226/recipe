@@ -42,7 +42,7 @@ include_once "partials/headers.php";
             data = {
                 'gid' : gid
             };
-            $http.post('/recipe/resource/set-session.php', data)
+            $http.post('resource/set-session.php', data)
                 .then(function (data) {
                     console.log(data);
                     window.location.href='groups-front.php';

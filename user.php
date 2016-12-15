@@ -8,10 +8,21 @@
 
 			$queryResult = [];
 
-			$queryUser = "select * from user where uname = :uname";
-	        
+			$queryUser = "SELECT * from recipe.user where uname = :uname";
+	        $queryRecipe = "SELECT * from recipe.recipe where username = :uname";
+	        $queryGroup = "SELECT * from recipe.groups where creator = :uname";
+	        $queryMeeting = "SELECT rsvptime, mname, mtime, mlocation from recipe.rsvpmeeting natural join recipe.meeting where uname = :uname";
 			$statement = execute($queryUser, $db);
 			$queryResult['user'] = $statement->fetchAll();
+
+			$statement = execute($queryRecipe, $db);
+			$queryResult['recipe'] = $statement->fetchAll();
+
+			$statement = execute($queryGroup, $db);
+			$queryResult['group'] = $statement->fetchAll();
+
+			$statement = execute($queryMeeting, $db);
+			$queryResult['meeting'] = $statement->fetchAll();
 
 	        echo json_encode($queryResult);
 	    } catch (PDOException $pdoex) {
