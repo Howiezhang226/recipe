@@ -36,9 +36,6 @@ if (isset($_POST['editreview'])) {
 
 
 <div class="container">
-<?php
-echo $rid;
-?>
     <form method="post" action="">
         <div></div>
         <div class="form-group">
