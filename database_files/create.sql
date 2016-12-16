@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.16, for osx10.11 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.11, for osx10.11 (x86_64)
 --
 -- Host: localhost    Database: recipe
 -- ------------------------------------------------------
--- Server version	5.7.16
+-- Server version	5.7.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `Recipe` (
   PRIMARY KEY (`rid`),
   KEY `username` (`username`),
   CONSTRAINT `recipe_ibfk_1` FOREIGN KEY (`username`) REFERENCES `User` (`uname`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `Recipe` (
 
 LOCK TABLES `Recipe` WRITE;
 /*!40000 ALTER TABLE `Recipe` DISABLE KEYS */;
-INSERT INTO `Recipe` VALUES (1,'huiguorou',2,'chinese recipe','hengwu'),(2,'shizitou',2,'chinese recipe','hengwu'),(3,'tutou',2,'chinese recipe','hengwu'),(4,'mapodoufu',2,'chinese recipe','hengwu'),(5,'jianjiaofeichang',2,'chinese recipe','hengwu'),(6,'guobaorou',2,'chinese northeast recipe','david'),(7,'xiaojiduimogu',2,'chinese northeast recipe','david'),(8,'lidalicai',2,'italian  recipe','haozhang'),(9,'broccoli',2,'italian  broccoli recipe','haozhang'),(19,'sugar cake',2,'sugar cake','haozhang'),(20,'Grandma’s Fettuccini Alfredo',3,'italian recipe','haozhang'),(21,'tuna1',1,'best tuna1','haozhang'),(22,'tuna2',2,'best tuna2','haozhang'),(23,'tuna3',3,'best tuna3','haozhang'),(24,'tuna4',4,'best tuna4','haozhang'),(25,'tuna5',5,'best tuna5','haozhang');
+INSERT INTO `Recipe` VALUES (1,'huiguorou',2,'chinese recipe','hengwu'),(2,'shizitou',2,'chinese recipe','hengwu'),(3,'tutou',2,'chinese recipe','hengwu'),(4,'mapodoufu',2,'chinese recipe','hengwu'),(5,'jianjiaofeichang',2,'chinese recipe','hengwu'),(6,'guobaorou',2,'chinese northeast recipe','david'),(7,'xiaojiduimogu',2,'chinese northeast recipe','david'),(8,'lidalicai',2,'italian  recipe','haozhang'),(9,'broccoli',2,'italian  broccoli recipe','haozhang'),(19,'sugar cake',2,'sugar cake','haozhang'),(20,'Grandma’s Fettuccini Alfredo',3,'italian recipe','haozhang'),(21,'tuna1',1,'best tuna1','haozhang'),(22,'tuna2',2,'best tuna2','haozhang'),(23,'tuna3',3,'best tuna3','haozhang'),(24,'tuna4',4,'best tuna4','haozhang'),(25,'tuna5',5,'best tuna5','haozhang'),(26,'12',4,'asd','haozhang'),(27,'zxczx',23,'easc','heng'),(28,'zxc',21,'ad','heng'),(29,'12',4,'asd','haozhang'),(30,'asd',31,'asascasc','heng'),(31,'123',23,'321','heng'),(32,'456',21,'789','heng'),(33,'qwd',21,'dddsa','heng'),(34,'321',3,'asd','heng'),(35,'zxc',2,'asd','heng'),(36,'asdacsa',2,'zxc','heng'),(37,'asdaca',21,'acacwqcwq','heng'),(38,'1231e1',21,'asdasdca','heng'),(39,'zxc',2,'asdasd','heng');
 /*!40000 ALTER TABLE `Recipe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +110,7 @@ CREATE TABLE `groups` (
   PRIMARY KEY (`gid`),
   KEY `creator` (`creator`),
   CONSTRAINT `groups_ibfk_1` FOREIGN KEY (`creator`) REFERENCES `User` (`uname`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +119,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (1,'haozhang','Park Slope Cake Club'),(2,'hengwu','Chinese food');
+INSERT INTO `groups` VALUES (1,'haozhang','Park Slope Cake Club'),(2,'hengwu','Chinese food'),(3,'heng','ahaa'),(4,'heng','ahaa'),(5,'heng','asdf'),(6,'heng','ss'),(7,'heng','fffff'),(8,'heng','fff'),(9,'heng','fff'),(10,'heng','ssss');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +171,7 @@ CREATE TABLE `join_groups` (
 
 LOCK TABLES `join_groups` WRITE;
 /*!40000 ALTER TABLE `join_groups` DISABLE KEYS */;
-INSERT INTO `join_groups` VALUES (1,'david','2016-11-24 17:42:21'),(1,'haozhang','2016-11-24 17:42:23'),(1,'heng','2016-11-24 17:42:21'),(1,'heng','2016-12-14 21:38:58'),(2,'heng','2016-12-14 21:39:08'),(2,'heng','2016-12-14 21:39:09'),(1,'hengwu','2016-11-24 17:42:24'),(2,'hengwu','2016-11-24 17:42:26');
+INSERT INTO `join_groups` VALUES (1,'david','2016-11-24 17:42:21'),(1,'haozhang','2016-11-24 17:42:23'),(1,'heng','2016-11-24 17:42:21'),(1,'heng','2016-12-14 21:38:58'),(1,'heng','2016-12-15 01:14:50'),(2,'heng','2016-12-14 21:39:08'),(2,'heng','2016-12-14 21:39:09'),(10,'heng','2016-12-15 21:28:58'),(1,'hengwu','2016-11-24 17:42:24'),(2,'hengwu','2016-11-24 17:42:26');
 /*!40000 ALTER TABLE `join_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -283,7 +283,7 @@ CREATE TABLE `recipe_tag` (
 
 LOCK TABLES `recipe_tag` WRITE;
 /*!40000 ALTER TABLE `recipe_tag` DISABLE KEYS */;
-INSERT INTO `recipe_tag` VALUES (1,1),(2,1),(1,2),(2,2),(1,3),(2,3),(1,4),(2,4),(1,5),(2,5),(1,6),(2,6),(5,8),(5,9),(11,19),(1,21),(3,21),(5,21),(11,21);
+INSERT INTO `recipe_tag` VALUES (1,1),(2,1),(1,2),(2,2),(1,3),(2,3),(1,4),(2,4),(1,5),(2,5),(1,6),(2,6),(5,8),(5,9),(11,19),(1,21),(3,21),(5,21),(11,21),(14,36),(1,39);
 /*!40000 ALTER TABLE `recipe_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -338,6 +338,7 @@ CREATE TABLE `report` (
 
 LOCK TABLES `report` WRITE;
 /*!40000 ALTER TABLE `report` DISABLE KEYS */;
+INSERT INTO `report` VALUES (1,'heng','acascsacascwdqwdqwcqwccqwc'),(2,'heng','ahahahahahaha');
 /*!40000 ALTER TABLE `report` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -397,7 +398,7 @@ CREATE TABLE `review` (
 
 LOCK TABLES `review` WRITE;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
-INSERT INTO `review` VALUES ('david',21,'best','',4),('david',22,'best','',3),('david',23,'best','',2),('david',24,'best','',1),('hengwu',20,'Yummy!','Really, really, tasty!',5),('hengwu',21,'best','',5),('hengwu',22,'best','',4),('hengwu',23,'best','',3),('hengwu',24,'best','',1),('hengwu',25,'best','',1);
+INSERT INTO `review` VALUES ('david',21,'best','',4),('david',22,'best','',3),('david',23,'best','',2),('david',24,'best','',1),('heng',6,'','as',1),('heng',23,'ascasdcasca','acasa as da asd as  ad wa ',1),('hengwu',20,'Yummy!','Really, really, tasty!',5),('hengwu',21,'best','',5),('hengwu',22,'best','',4),('hengwu',23,'best','',3),('hengwu',24,'best','',1),('hengwu',25,'best','',1);
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -456,7 +457,7 @@ CREATE TABLE `rsvpmeeting` (
 
 LOCK TABLES `rsvpmeeting` WRITE;
 /*!40000 ALTER TABLE `rsvpmeeting` DISABLE KEYS */;
-INSERT INTO `rsvpmeeting` VALUES (1,'david','2016-11-24 17:39:40'),(1,'haozhang','2016-11-24 17:40:11'),(1,'hengwu','2016-11-24 17:40:15'),(1,'kiser','2016-11-24 17:50:34'),(4,'david','2016-11-24 17:40:07'),(4,'haozhang','2016-11-24 17:40:12'),(4,'hengwu','2016-11-24 17:40:16'),(4,'kiser','2016-11-24 17:50:35'),(5,'david','2016-11-24 17:40:08'),(5,'haozhang','2016-11-24 17:40:14'),(5,'kiser','2016-11-24 17:50:36'),(6,'david','2016-11-24 17:40:10'),(6,'kiser','2016-11-24 17:50:37'),(7,'hengwu','2016-11-24 17:40:17'),(8,'hengwu','2016-11-24 17:40:19'),(9,'hengwu','2016-11-24 17:40:20');
+INSERT INTO `rsvpmeeting` VALUES (1,'david','2016-11-24 17:39:40'),(1,'haozhang','2016-11-24 17:40:11'),(1,'heng','2016-12-15 03:01:14'),(1,'hengwu','2016-11-24 17:40:15'),(1,'kiser','2016-11-24 17:50:34'),(4,'david','2016-11-24 17:40:07'),(4,'haozhang','2016-11-24 17:40:12'),(4,'hengwu','2016-11-24 17:40:16'),(4,'kiser','2016-11-24 17:50:35'),(5,'david','2016-11-24 17:40:08'),(5,'haozhang','2016-11-24 17:40:14'),(5,'heng','2016-12-15 17:32:36'),(5,'kiser','2016-11-24 17:50:36'),(6,'david','2016-11-24 17:40:10'),(6,'kiser','2016-11-24 17:50:37'),(7,'heng','2016-12-15 17:19:23'),(7,'hengwu','2016-11-24 17:40:17'),(8,'heng','2016-12-15 17:19:48'),(8,'hengwu','2016-11-24 17:40:19'),(9,'heng','2016-12-15 17:20:27'),(9,'hengwu','2016-11-24 17:40:20');
 /*!40000 ALTER TABLE `rsvpmeeting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -471,7 +472,7 @@ CREATE TABLE `tags` (
   `tid` int(10) NOT NULL AUTO_INCREMENT,
   `tname` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`tid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -480,7 +481,7 @@ CREATE TABLE `tags` (
 
 LOCK TABLES `tags` WRITE;
 /*!40000 ALTER TABLE `tags` DISABLE KEYS */;
-INSERT INTO `tags` VALUES (1,'spicy'),(2,'chinese'),(3,'warm'),(4,'sugar'),(5,'italian'),(11,'cake');
+INSERT INTO `tags` VALUES (1,'spicy'),(2,'chinese'),(3,'warm'),(4,'sugar'),(5,'italian'),(11,'cake'),(12,'kk'),(13,'ascac'),(14,'ascasc');
 /*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -508,7 +509,7 @@ CREATE TABLE `user_recent_recipe` (
 
 LOCK TABLES `user_recent_recipe` WRITE;
 /*!40000 ALTER TABLE `user_recent_recipe` DISABLE KEYS */;
-INSERT INTO `user_recent_recipe` VALUES ('heng',3,'2016-12-14 20:12:48'),('heng',3,'2016-12-14 20:20:19'),('heng',4,'2016-12-14 20:21:05');
+INSERT INTO `user_recent_recipe` VALUES ('heng',1,'2016-12-15 23:15:02'),('heng',2,'2016-12-15 23:15:25'),('heng',3,'2016-12-14 20:12:48'),('heng',3,'2016-12-14 20:20:19'),('heng',4,'2016-12-14 20:21:05'),('heng',5,'2016-12-15 21:06:43'),('heng',6,'2016-12-15 01:12:15'),('heng',6,'2016-12-15 01:12:45'),('heng',6,'2016-12-15 01:14:10'),('heng',6,'2016-12-15 01:14:20'),('heng',6,'2016-12-15 17:55:39'),('heng',6,'2016-12-15 18:03:05'),('heng',6,'2016-12-15 18:06:36'),('heng',6,'2016-12-15 18:17:09'),('heng',6,'2016-12-15 18:17:15'),('heng',6,'2016-12-15 18:19:15'),('heng',6,'2016-12-15 18:34:34'),('heng',6,'2016-12-15 18:36:34'),('heng',6,'2016-12-15 18:36:39'),('heng',6,'2016-12-15 18:38:14'),('heng',6,'2016-12-15 18:41:13'),('heng',6,'2016-12-15 18:42:09'),('heng',6,'2016-12-15 21:04:55'),('heng',6,'2016-12-15 22:49:33'),('heng',8,'2016-12-15 21:06:40'),('heng',8,'2016-12-15 23:16:00'),('heng',9,'2016-12-15 23:15:16'),('heng',9,'2016-12-15 23:15:32'),('heng',9,'2016-12-15 23:16:04'),('heng',20,'2016-12-14 22:35:16'),('heng',20,'2016-12-14 22:43:53'),('heng',20,'2016-12-15 23:15:06'),('heng',21,'2016-12-15 21:09:08'),('heng',21,'2016-12-15 21:11:19'),('heng',21,'2016-12-15 21:11:30'),('heng',21,'2016-12-15 21:12:21'),('heng',21,'2016-12-15 21:18:22'),('heng',21,'2016-12-15 21:19:18'),('heng',21,'2016-12-15 21:19:37'),('heng',21,'2016-12-15 21:20:05'),('heng',21,'2016-12-15 23:14:35'),('heng',21,'2016-12-15 23:16:07'),('heng',22,'2016-12-15 23:14:48'),('heng',22,'2016-12-15 23:15:11'),('heng',22,'2016-12-15 23:15:22'),('heng',23,'2016-12-15 01:08:09'),('heng',23,'2016-12-15 01:12:48'),('heng',23,'2016-12-15 18:19:31'),('heng',23,'2016-12-15 18:19:43'),('heng',23,'2016-12-15 18:19:58'),('heng',23,'2016-12-15 18:22:20'),('heng',23,'2016-12-15 18:22:29'),('heng',23,'2016-12-15 18:22:35'),('heng',23,'2016-12-15 18:22:40'),('heng',23,'2016-12-15 18:22:49'),('heng',23,'2016-12-15 18:30:32'),('heng',23,'2016-12-15 18:30:56'),('heng',23,'2016-12-15 18:31:10'),('heng',23,'2016-12-15 18:42:12'),('heng',23,'2016-12-15 18:46:00'),('heng',23,'2016-12-15 18:47:34'),('heng',23,'2016-12-15 18:47:59'),('heng',23,'2016-12-15 18:48:09'),('heng',23,'2016-12-15 18:59:03'),('heng',23,'2016-12-15 21:06:30'),('heng',23,'2016-12-15 23:15:41'),('heng',24,'2016-12-15 21:06:33'),('heng',24,'2016-12-15 23:15:38'),('heng',24,'2016-12-15 23:27:07'),('heng',24,'2016-12-15 23:27:12'),('heng',25,'2016-12-15 21:06:37'),('heng',25,'2016-12-15 21:06:46'),('heng',25,'2016-12-15 23:15:29'),('heng',25,'2016-12-15 23:15:36'),('heng',27,'2016-12-15 17:33:14'),('heng',27,'2016-12-15 17:34:06'),('heng',27,'2016-12-15 17:35:58'),('heng',27,'2016-12-15 17:36:30'),('heng',27,'2016-12-15 17:38:18'),('heng',27,'2016-12-15 17:39:00'),('heng',27,'2016-12-15 17:49:38'),('heng',27,'2016-12-15 18:19:07'),('heng',27,'2016-12-15 18:19:11'),('heng',31,'2016-12-15 23:00:30');
 /*!40000 ALTER TABLE `user_recent_recipe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -534,6 +535,7 @@ CREATE TABLE `user_recent_search` (
 
 LOCK TABLES `user_recent_search` WRITE;
 /*!40000 ALTER TABLE `user_recent_search` DISABLE KEYS */;
+INSERT INTO `user_recent_search` VALUES ('heng','a','2016-12-14 22:34:52'),('heng','s','2016-12-15 23:27:38'),('heng','s','2016-12-15 23:27:42');
 /*!40000 ALTER TABLE `user_recent_search` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -574,4 +576,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-14 21:58:55
+-- Dump completed on 2016-12-15 23:36:51
