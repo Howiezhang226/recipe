@@ -3,11 +3,10 @@ $page_title = "Edit Review";
 include_once "resource/database.php";
 include_once "resource/session.php";
 include_once "partials/headers.php";
-if(isset($_POST['rid'])) :
-    $rid = $_POST['rid'];
-else :
+if(isset($_GET['rid'])) 
+    $rid = $_GET['rid'];
+else
     $rid = 1;
-endif;
 if (isset($rid)) {
 
 
