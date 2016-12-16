@@ -149,7 +149,7 @@ if (isset($_POST['review'])) {
 							// .attr('href', "editReview.php")
 							.attr('id', $review['rid'])
 							.click(function() {
-								location.href = "editReview.php" + "?rid=" + $(this).attr('id');
+								location.href = "editreview.php" + "?rid=" + $(this).attr('id');
 							});
 							$(list).append($link);
 						}

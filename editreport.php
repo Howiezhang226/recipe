@@ -3,8 +3,8 @@ $page_title = "Edit Report";
 include_once "resource/database.php";
 include_once "resource/session.php";
 include_once "partials/headers.php";
-if(isset($_POST['mid']))
-    $mid = $_POST['mid'];
+if(isset($_GET['mid']))
+    $mid = $_GET['mid'];
 else
     $mid = 1;
 if (isset($mid)) {

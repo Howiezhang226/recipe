@@ -8,11 +8,11 @@
 
 			$queryResult = [];
 
-			$queryUser = "SELECT mname, description from recipe.report natural join recipe.meeting where mid = :mid and uname = :uname";
+			$queryUser = "SELECT mname, description, uname, mid from recipe.report natural join recipe.meeting where mid = :mid and uname = :uname";
 
 			$statement = execute($queryUser, $db);
 			$queryResult['report'] = $statement->fetchAll();
-
+			$queryResult['uname'] = $_SESSION['uname'];
 	        echo json_encode($queryResult);
 	    } catch (PDOException $pdoex) {
 	        echo $pdoex -> getMessage();

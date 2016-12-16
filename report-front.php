@@ -24,6 +24,17 @@ include_once "partials/headers.php";
 					$(".descr").append(
 						$(document.createElement("h3"))
 						.text(data["report"][0]["description"]));
+					if (data['uname'] == data['report'][0]['uname']) {
+						$link = $(document.createElement("a"))
+							.text("edit")
+							.addClass("btn btn-primary")
+							// .attr('href', "editReview.php")
+							.attr('id', data["report"][0]['mid'])
+							.click(function() {
+								location.href = "editreport.php" + "?mid=" + $(this).attr('id');
+							});
+							$(".descr").append($link);
+					}
 
 				},
 				error: function (textStatus, errorThrown) {
