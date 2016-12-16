@@ -22,20 +22,16 @@ include_once "partials/headers.php";
 				float: left;
 			}
 
-			.verti-bar {
+			/*.verti-bar {
 				list-style-type: none;
 			    margin-top: 2%;
 			    padding: 0;
 			    width: 10%;
 			    background-color: #f1f1f1;
-			    height: 100%; /* Full height */
-			    position: fixed; /* Make it stick, even on scroll */
-			    overflow: auto; /* Enable scrolling if the sidenav has too much content */
-			}
-
-			.verti-bar li {
-
-			}
+			    height: 100%;  Full height 
+			    position: fixed; /* Make it stick, even on scroll 
+			    overflow: auto; /* Enable scrolling if the sidenav has too much content 
+			}*/
 
 			#main-body {
 				position: absolute;
@@ -44,15 +40,15 @@ include_once "partials/headers.php";
 			}
 		</style>
 
-			<ul class="navi-bar">
-				<li><a herf="">Recent view</a></li>
-				<li><a herf="">User</a></li>
+			<div class="container-fluid">
+  				<div class="row">
+    				<div class="col-sm-3 col-lg-2">
+			<ul class="verti-bar nav">
+				<li class="nav-item">Groups</li>
 			</ul>
-
-			<ul class="verti-bar">
-				<li>Groups</li>
-			</ul>
-			<div class="container">
+			</div>
+			<div class="col-sm-9 col-lg-10">
+				<div class="container">
 				<div id="main-body" class="card-columns">
 					<div class="recipes">
 						
@@ -65,6 +61,10 @@ include_once "partials/headers.php";
 					</ul>
 				</div>
 			</div>
+    		</div>
+    		</div>
+			</div>
+			
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script>
@@ -167,9 +167,11 @@ include_once "partials/headers.php";
 						var list = document.createElement("li");
 						var link = document.createElement("a");
 						$(link).attr('href', "groups-front.php")
+						.addClass("nav-link active");
 						$(link).text(data["groups"][i]["gname"]);
 						$(list).append($(link));
-						$(list).attr('id', data["groups"][i]["gid"]);
+						$(list).attr('id', data["groups"][i]["gid"])
+						.addClass("nav-item");
 						$groups.append($(list));
 						$(list).click(function() {
 							$.ajax({

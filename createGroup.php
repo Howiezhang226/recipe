@@ -45,7 +45,7 @@ include_once "partials/headers.php";
 					url: "create.php",
 					data: {'create_group': $newGroup},
 					success: function(data) {
-
+						console.log(data);
 					},
 					error: function (textStatus, errorThrown) {
 	            		console.log(textStatus);

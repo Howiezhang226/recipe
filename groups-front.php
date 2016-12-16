@@ -13,7 +13,7 @@ include_once "partials/headers.php";
 			<p class="group-name"></p>
 			<p class="group-creator"></p>
 
-			<ul class="meetings"></ul>
+			<ul class="meetings list-group"></ul>
 		</div>
 		<div id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -119,7 +119,7 @@ include_once "partials/headers.php";
                         $(meeting).append($(document.createElement("p")).append(report_button));
 
 
-
+                        $(list).addClass("list-group-item");
 						$(list).append($(meeting));
 						$(".meetings").append($(list));
 					}

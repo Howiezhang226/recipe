@@ -105,15 +105,42 @@ include_once "partials/headers.php";
 				if ("reviews" in data) {
 					for (var i = 0; i < data["reviews"].length; i++) {
 
-						
-						var list = document.createElement("li");
+
+						var card = document.createElement("div");
+						var card_header = document.createElement("div");
+						var card_block = document.createElement("div");
+						var title = document.createElement("h4");
+						var content = document.createElement("p");
 						var link = document.createElement("a");
+						$(card).addClass("card");
+						$(card_header).addClass("card-header");
+						$(card_block).addClass("card-block");
+						$(title).addClass("card-title");
+						$(content).addClass("card-text");
+						$(link).addClass("btn btn-primary");
+
+
+						$(content).css('line-height', '20px');
+						$(content).css('max-height', '40px');
+						$(content).css('text-overflow', 'ellipsis');
+						$(content).css('overflow', 'hidden');
+						
+						$(card_header).text("Review");
+						$(title).text(data["reviews"][i]["uname"] + " review for " + data["reviews"][i]["title"]);
+						$(content).text(data["reviews"][i]["content"]);
 						$(link).attr('href', "recipe-front.php");
-						$(link).text(data["reviews"][i]["uname"] + " review for " + data["reviews"][i]["title"]);
-						$(list).append($(link));
-						$(list).attr('id', data["reviews"][i]["rid"]);
-						$(".search-list").append($(list));
-						$(list).click(function() {
+						$(link).text("check");
+
+						$(link).attr('id', data["reviews"][i]["rid"]);
+
+						$(card_block).append($(title));
+						$(card_block).append($(content));
+						$(card_block).append($(link));
+						$(card).append($(card_header));
+						$(card).append($(card_block));
+						$(".search-list").append($(card));
+
+						$(link).click(function() {
 							$.ajax({
 								type: "POST",
 								url: "resource/set-session.php",
@@ -218,6 +245,7 @@ include_once "partials/headers.php";
 					}
 				}
 			}
+
 		</script>
 	</body>
 </html>

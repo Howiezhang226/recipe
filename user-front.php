@@ -8,30 +8,34 @@ include_once "partials/headers.php";
 	<div class="container">
 		
 	</div>
-	<div>
+	<div class = "row">
+		<div class="col-md-3">
 			Recipe Created by me:
-			<ul class="recipe"></ul>
+			<ul class="recipe list-group"></ul>
 		</div>
-		<div>
+		<div class="col-md-3">
 			Group Created by me:
-			<div class="group"></div>
+			<ul class="group  list-group"></ul>
 		</div>
-		<div>
+		<div class="col-md-3">
 			Meeting RSVP by me:
-			<div class="meeting"></div>
+			<ul class="meeting  list-group"></ul>
 		</div>
-		<div>
+		<div class="col-md-3">
 			Review post by me:
-			<div class="review"></div>
+			<ul class="review  list-group"></ul>
 		</div>
-		<div>
+		<div class="col-md-3">
 			Report post by me:
-			<div class="report"></div>
+			<ul class="report  list-group"></ul>
 		</div>
+	</div>
+	<hr/>
 	<div>
 		<a href="createRecipe.php" class="btn btn-primary pull-right">create recipe</a>
 		<a href="createGroup.php" class="btn btn-primary pull-right">create group</a>
 	</div>
+	<hr/>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script>
@@ -59,7 +63,7 @@ include_once "partials/headers.php";
 						$link.attr('href', "recipe-front.php");
 						$link.attr('id', $recipe['rid']);
 						$link.text($recipe['title']);
-						$list = $(document.createElement("li"));
+						$list = $(document.createElement("li")).addClass("list-group-item");
 						$list.append($link);
 						$(".recipe").append($list);
 						$link.click(function() {
@@ -81,7 +85,7 @@ include_once "partials/headers.php";
 						$link.attr('href', "groups-front.php");
 						$link.attr('id', $recipe['gid']);
 						$link.text($recipe['gname']);
-						$list = $(document.createElement("li"));
+						$list = $(document.createElement("li")).addClass("list-group-item");
 						$list.append($link);
 						$(".group").append($list);
 						$link.click(function() {
@@ -103,7 +107,7 @@ include_once "partials/headers.php";
 						$link.attr('href', "groups-front.php");
 						$link.attr('id', $recipe['mholder']);
 						$link.text($recipe['mname']);
-						$list = $(document.createElement("li"));
+						$list = $(document.createElement("li")).addClass("list-group-item");
 						$list.append($link);
 						$(".meeting").append($list);
 						$link.click(function() {
@@ -126,7 +130,7 @@ include_once "partials/headers.php";
 						$link.attr('href', "recipe-front.php");
 						$link.attr('id', $review['rid']);
 						$link.text("review for " + $review['title']);
-						$list = $(document.createElement("li"));
+						$list = $(document.createElement("li")).addClass("list-group-item");
 						$list.append($link);
 						$(".review").append($list);
 						$link.click(function() {
@@ -149,7 +153,7 @@ include_once "partials/headers.php";
 						$link.attr('href', "report-front.php");
 						$link.attr('id', $report['mid']);
 						$link.text("report for " + $report['mname']);
-						$list = $(document.createElement("li"));
+						$list = $(document.createElement("li")).addClass("list-group-item");
 						$list.append($link);
 						$(".report").append($list);
 						$link.click(function() {
@@ -179,19 +183,26 @@ include_once "partials/headers.php";
 				dataType: "json"
 			});
 		</script>
-	<div ng-app="userApp" ng-controller="recentCtrl" ng-init="getRecentActivity()">
+	<div class = "row" ng-app="userApp" ng-controller="recentCtrl" ng-init="getRecentActivity()">
+	<div class="col-md-4">
 		<h5>Recent 5 interested recipes</h5>
 		<div ng-repeat="rec in results.recipe">
-			<p>recipe title :{{ rec.title }}</p>
+				<p class="list-group-item">recipe title :{{ rec.title }}</p>
 		</div>
-		<h5>Recent 5 interested tags</h5>
+	</div>
+	<div class="col-md-4">
+			<h5>Recent 5 interested tags</h5>
 		<div ng-repeat="rec in results.tags">
-			<p>tag name:{{ rec.tname }}</p>
+			<p class="list-group-item">tag name:{{ rec.tname }}</p>
 		</div>
+	</div>
+	
+	<div class="col-md-4">
 		<h5>Recent 5 interested keywords</h5>
 		<div ng-repeat="rec in results.search">
-			<p>keywords:{{ rec.keywords }}</p>
+			<p class="list-group-item">keywords:{{ rec.keywords }}</p>
 		</div>
+	</div>	
 
 	</div>
 	<script>
