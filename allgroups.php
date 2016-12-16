@@ -32,8 +32,15 @@ include_once "partials/headers.php";
             };
             $http.post('addGroup.php', data)
                 .then(function (data) {
-                    console.log(data);
-                },function (data) {
+                    console.log(data.data);
+                    if (data.data == 23000) {
+                        alert("You have joined this group before");
+                    }
+                    else {
+                        alert("successful!");
+                    }
+                    }
+                ,function (data) {
                     console.log("error");
                 });
         };

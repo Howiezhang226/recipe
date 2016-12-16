@@ -19,6 +19,6 @@ try{
         $result =  "<p> registeration successful! <p>";
     }
 } catch (PDOException $pdoex) {
-    echo $pdoex -> getMessage();
+    echo $pdoex -> getCode();
     $result = "<p> An error! <p>";
 }

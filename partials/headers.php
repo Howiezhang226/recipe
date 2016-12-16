@@ -27,7 +27,7 @@ ob_start();
 </head>
 <body>
 <nav class="navbar navbar-light bg-faded navbar-fixed-top">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Recipe Meeting</a>
             <ul class="nav navbar-nav">
                 <?php if(isset($_SESSION['uname'])): ?>
                     <li class="nav-item active">

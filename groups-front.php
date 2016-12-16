@@ -13,8 +13,6 @@ include_once "partials/headers.php";
 			<p class="group-name"></p>
 			<p class="group-creator"></p>
 
-			<a href="main-page-front.php">back</a>
-						
 			<ul class="meetings"></ul>
 		</div>
 		<div id="accordion" role="tablist" aria-multiselectable="true">
