@@ -25,7 +25,7 @@ if (isset($_POST['editreport'])) {
     $statement = $db->prepare($sqlQuery);
     $statement->execute(
         array(':mid' => $mid,
-            ':description' => $_POST['description'],
+            ':description' => htmlspecialchars($_POST['description']),
             ':uname' => $_SESSION['uname']
         ));
     header("location:editreport.php");

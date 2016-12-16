@@ -6,8 +6,8 @@ include_once "partials/headers.php";
 
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
-        $uname = $_POST['username'];
-        $password = $_POST['password'];
+        $uname = htmlspecialchars($_POST['username']);
+        $password = htmlspecialchars($_POST['password']);
 
         $sqlQuery = "SELECT * FROM recipe.User WHERE uname = :uname";
         $statement = $db->prepare($sqlQuery);

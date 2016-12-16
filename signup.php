@@ -3,11 +3,11 @@ $page_title = "Sign Up";
 include_once 'resource/database.php';
 include_once "partials/headers.php";
 if (isset($_POST['username'])) {
-    $username = $_POST['username'];
-    $loginname = $_POST['loginname'];
-    $password = $_POST['password'];
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
+    $username = htmlspecialchars($_POST['username']);
+    $loginname = htmlspecialchars($_POST['loginname']);
+    $password = htmlspecialchars($_POST['password']);
+    $age = htmlspecialchars($_POST['age']);
+    $gender = htmlspecialchars($_POST['gender']);
     //$result = "<p style='padding: 20px; color: red; border: 1px solid gray;'> Invalid username or password</p>";
 
     $hash_password = password_hash($password,PASSWORD_DEFAULT);

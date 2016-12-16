@@ -25,9 +25,9 @@ if (isset($_POST['editreview'])) {
     $statement = $db->prepare($sqlQuery);
     $statement->execute(
         array(':rid' => $rid,
-        ':content' => $_POST['content'],
-        ':suggestion' => $_POST['suggestion'],
-        ':rating' => $_POST['rating'],
+        ':content' => htmlspecialchars($_POST['content']),
+        ':suggestion' => htmlspecialchars($_POST['suggestion']),
+        ':rating' => htmlspecialchars($_POST['rating']),
         ));
     header("location:editreview.php");
 

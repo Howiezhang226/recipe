@@ -17,11 +17,11 @@
             $statement->execute(
                 array(
                     ':uname' => $_SESSION['uname'],
-                    ':keywords' => $_POST['search_info']));
+                    ':keywords' => htmlspecialchars($_POST['search_info'])));
         } catch (PDOException $exception) {
             echo $exception ->getMessage();
         }
-		$keyword = '%'.$_POST['search_info'].'%';
+		$keyword = '%'.htmlspecialchars($_POST['search_info']).'%';
 		$querySearch = search($keyword, $db, $queryRecipe, $queryReview, $queryMeeting, $queryReport, $queryTags);
 		// echo $querySearch['report'];
 		$result = json_encode($querySearch);
